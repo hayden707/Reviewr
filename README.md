@@ -2,15 +2,9 @@
 
 ## Date 9/24/2021
 
-### By: Hayden Anderson, Neil Italia and Tyler Jones
+### This project was handmade by: 
 
-### GitHub
-
-#### [Hayden Anderson](https://github.com/hayden707) [Neil Italia](https://github.com/neilitalia) [Tyler Jones](https://github.com/msiroilem)
-
-### LinkedIn
-
-#### [Hayden Anderson](https://www.linkedin.com/in/hayden-anderson-909/) [Neil Italia](https://www.linkedin.com/in/neilitalia/) [Tyler Jones](https://www.linkedin.com/in/tylerwadejones/)
+### Hayden Anderson: [GitHub](https://github.com/hayden707) [Linkedin](https://www.linkedin.com/in/hayden-anderson-909/)   |   Neil Italia:  [GitHub](https://github.com/neilitalia) [Linkedin](https://www.linkedin.com/in/neilitalia/)  | Tyler Jones: [GitHub](https://github.com/msiroilem) [LinkedIn](https://www.linkedin.com/in/tylerwadejones/)
 
 #### [Trello](https://trello.com/b/yNoD5nnM/music-review)
 
