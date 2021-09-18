@@ -4,8 +4,8 @@
 
 ### By: Hayden Anderson, Neil Italia and Tyler Jones
 
-#### [GitHub](https://github.com/hayden707)
+#### [Hayden Anderson](https://github.com/hayden707)
 
-#### [GitHub](https://github.com/neilitalia)
+#### [Neil Italia](https://github.com/neilitalia)
 
-#### [GitHub](https://github.com/msiroilem)
+#### [Tyler Jones](https://github.com/msiroilem)
