@@ -16,6 +16,12 @@
 
 ### **_Getting Started_**
 
+Prior to beginning our project, our group has created a Trello board (linked above) to outline the creation of our app. We will begin by setting up our API and testing the various endpoints we plan to use. We will then initiate our database, build our three table models, controllers, and CRUD queries.
+
+We will build our front-end using React. We have 13 controllers as outlined in a component hierarchy diagram.
+
+We will also implement an authorization system so that only registered users will be able to interact with the site.
+
 ### **_Screenshots_**
 
 ### **_Future Updates_**
