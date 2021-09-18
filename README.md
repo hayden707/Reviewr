@@ -38,6 +38,8 @@ We will also implement an authorization system so that only registered users wil
 
 ### **_Future Updates_**
 
----
+- [ ] Add user find functionality
+
+- [ ] Add TMDB API to review movies
 
 ### **_Credits_**
