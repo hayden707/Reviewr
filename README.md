@@ -8,4 +8,4 @@
 
 #### [Hayden Anderson](https://www.linkedin.com/in/hayden-anderson-909/) [Neil Italia](https://www.linkedin.com/in/neilitalia/) [Tyler Jones](https://www.linkedin.com/in/tylerwadejones/)
 
-#### 
+#### [Trello](https://trello.com/b/yNoD5nnM/music-review)
