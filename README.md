@@ -6,9 +6,10 @@
 
 ### Hayden Anderson: [GitHub](https://github.com/hayden707) [Linkedin](https://www.linkedin.com/in/hayden-anderson-909/) | Neil Italia: [GitHub](https://github.com/neilitalia) [Linkedin](https://www.linkedin.com/in/neilitalia/) | Tyler Jones: [GitHub](https://github.com/msiroilem) [LinkedIn](https://www.linkedin.com/in/tylerwadejones/)
 
----
+
 
 #### [Trello](https://trello.com/b/yNoD5nnM/music-review) [Figma](https://www.figma.com/file/1zFh7d3rnREyVMaoMbi7h4/Music-Review?node-id=0%3A1)
+
 
 ---
 
