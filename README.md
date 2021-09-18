@@ -18,6 +18,12 @@
 
 ### **_Screenshots_**
 
+![image](https://user-images.githubusercontent.com/38524171/133909859-c350fdf4-5d0f-4ba9-a657-e4cba1cb3b59.png)
+
+![image](https://user-images.githubusercontent.com/38524171/133909865-8a181d3c-64ef-4c66-b193-d709f0428b63.png)
+
+![image](https://user-images.githubusercontent.com/38524171/133909872-2756b82d-0805-4e37-acd0-ebbb1731c807.png)
+
 ### **_Future Updates_**
 
 ### **_Credits_**
