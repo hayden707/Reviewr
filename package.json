@@ -1,4 +1,12 @@
 {
+  "name": "reviewr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --ignore client/ app.js",
+    "start": "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
