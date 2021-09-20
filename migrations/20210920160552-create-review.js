@@ -14,11 +14,15 @@ module.exports = {
       rating: {
         type: Sequelize.REAL
       },
-      music_id: {
+      album_id: {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
