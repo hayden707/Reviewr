@@ -20,7 +20,7 @@ export default function Feed() {
           <div>
             <img src={review.image} />
           </div>
-          <p>{review.body.substring(0, 20)}</p>
+          <p>{review.body.substring(0, 80)}...</p>
         </div>
       ))}
     </div>
