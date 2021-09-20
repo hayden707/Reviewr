@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
@@ -11,12 +11,34 @@ import Search from './pages/Search'
 import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
 import Feed from './pages/Feed'
+import { CheckSession } from './services/Auth'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
     false || localStorage.getItem('authenticated')
   )
   const [user, setUser] = useState(null)
+
+  const handleLogOut = () => {
+    //Reset all auth related state and clear localstorage
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
+  const checkToken = async () => {
+    const session = await CheckSession()
+    setUser(session)
+    toggleAuthenticated(true)
+    localStorage.setItem('authenticated', '1')
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
   return (
     <div className="App">
