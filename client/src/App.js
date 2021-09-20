@@ -10,6 +10,7 @@ import Reviews from './pages/Reviews'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
+import Feed from './pages/Feed'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/userprofile" component={UserProfile} />
+          <Route exact path="/feed" component={Feed} />
         </Switch>
       </main>
     </div>

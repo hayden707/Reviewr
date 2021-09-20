@@ -4,22 +4,22 @@ export default function Login() {
   return (
     <div>
       <h2>Log in. Rock Out.</h2>
-      <form className="LoginForm">
+      <form className="login-form">
         <label>Username:</label>
         <input
-          className="UsernameLogin"
+          className="username-login"
           type="text"
-          name="Username"
+          name="username"
           required
         ></input>
         <label>Password:</label>
         <input
-          className="PasswordLogin"
+          className="password-login"
           type="text"
-          name="Password"
+          name="password"
           required
         ></input>
-        <button className="LoginButton">Login</button>
+        <button className="login-button">Login</button>
       </form>
     </div>
   )
