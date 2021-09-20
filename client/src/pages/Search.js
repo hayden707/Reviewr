@@ -9,8 +9,8 @@ export default function Search() {
     e.preventDefault()
     const res = await FindAlbum(input)
     setAlbums(res)
-    console.log(albums)
   }
+
   return (
     <div>
       <h3>Search for an album</h3>
