@@ -15,12 +15,7 @@ module.exports = {
         type: Sequelize.REAL
       },
       album_id: {
-        type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'albums',
-          key: 'id'
-        }
+        type: Sequelize.INTEGER
       },
       user_id: {
         type: Sequelize.INTEGER,
