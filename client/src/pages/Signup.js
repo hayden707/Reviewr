@@ -4,36 +4,36 @@ export default function Signup() {
   return (
     <div>
       <h2>Let's get started.</h2>
-      <form className="SignupForm">
+      <form className="signup-form">
         <label>Email:</label>
         <input
-          className="EmailSignup"
+          className="email-signup"
           type="text"
-          name="Email"
+          name="email"
           required
         ></input>
         <label>Username:</label>
         <input
-          className="UsernameSignup"
+          className="username-signup"
           type="text"
-          name="Username"
+          name="username"
           required
         ></input>
         <label>Password:</label>
         <input
-          className="PasswordSignup"
+          className="password-signup"
           type="text"
-          name="Password"
+          name="password"
           required
         ></input>
         <label>Confirm Password:</label>
         <input
-          className="ConfirmPasswordSignup"
+          className="confirm-password-signup"
           type="text"
-          name="ConfirmPassword"
+          name="confirm-password"
           required
         ></input>
-        <button className="SignupButton">Signup Now</button>
+        <button className="signup-button">Signup Now</button>
       </form>
     </div>
   )
