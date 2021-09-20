@@ -1,14 +1,18 @@
 const { User } = require('../models')
 const middleware = require('../middleware')
+
 const Login = async (req, res) => {
   try {
     const user = await User.findOne({
-      where: { email: req.body.email },
+      where: { username: req.body.username },
       raw: true
     })
     if (
       user &&
-      (await middleware.comparePassword(user.passwordDigest, req.body.password))
+      (await middleware.comparePassword(
+        user.password_digest,
+        req.body.password
+      ))
     ) {
       let payload = {
         id: user.id,
@@ -19,7 +23,7 @@ const Login = async (req, res) => {
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
-    throw error
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
 }
 
@@ -30,7 +34,7 @@ const Register = async (req, res) => {
     const user = await User.create({ username, email, password_digest })
     res.send(user)
   } catch (error) {
-    throw error
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
 }
 
@@ -50,7 +54,9 @@ const UpdatePassword = async (req, res) => {
       return res.send({ status: 'Ok', payload: user })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-  } catch (error) {}
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+  }
 }
 
 const CheckSession = async (req, res) => {
