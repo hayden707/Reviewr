@@ -3,7 +3,7 @@ import React from 'react'
 export default function Home() {
   return (
     <div>
-      <h2>Welcome to REVIEWR</h2>
+      <h2>REVIEWR Home Page</h2>
     </div>
   )
 }
