@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
@@ -13,6 +13,11 @@ import UserProfile from './pages/UserProfile'
 import Feed from './pages/Feed'
 
 function App() {
+  const [authenticated, toggleAuthenticated] = useState(
+    false || localStorage.getItem('authenticated')
+  )
+  const [user, setUser] = useState(null)
+
   return (
     <div className="App">
       <Nav />
@@ -21,7 +26,17 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/addreview" component={AddReview} />
-          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/login"
+            component={(props) => (
+              <Login
+                {...props}
+                setUser={setUser}
+                toggleAuthenticated={toggleAuthenticated}
+              />
+            )}
+          />
           <Route exact path="/reviews" component={Reviews} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
