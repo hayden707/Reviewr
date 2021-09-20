@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       rating: DataTypes.REAL,
       album_id: {
         type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
         references: {
           model: 'albums',
           key: 'id'
@@ -31,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       user_id: {
         type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
         references: {
           model: 'users',
           key: 'id'
