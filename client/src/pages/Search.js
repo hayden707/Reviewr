@@ -4,9 +4,9 @@ export default function Search() {
   return (
     <div>
       <h3>Search for an album</h3>
-      <form className="SearchForm">
-        <input className="SearchInput" type="text" name="Search" required />
-        <button className="SearchButton">Search</button>
+      <form className="search-form">
+        <input className="search-input" type="text" name="search" required />
+        <button className="search-button">Search</button>
       </form>
     </div>
   )
