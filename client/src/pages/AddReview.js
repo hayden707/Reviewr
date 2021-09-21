@@ -7,8 +7,8 @@ import MediaCard from '../components/MediaCard'
 import { GetAlbumDetails } from '../services/DeezerServices'
 
 export default function AddReview(props) {
-  const [reviewContent, setReviewContent] = useState('')
   const [albumDetails, setAlbumDetails] = useState(null)
+  const [reviewContent, setReviewContent] = useState('')
   const [rating, setRating] = useState(5)
 
   useEffect(async () => {
@@ -17,8 +17,6 @@ export default function AddReview(props) {
     if (existing.id) {
       setAlbumDetails({ ...res.data, databaseId: existing.id })
     } else {
-      console.log('res.data :>> ', res.data)
-      setAlbumDetails(res.data)
       const payload = {
         title: res.data.title,
         image: res.data.cover_big,
@@ -26,7 +24,7 @@ export default function AddReview(props) {
         deezer_id: res.data.id
       }
       const newAlbum = await AddAlbum(payload)
-      console.log('newAlbum :>> ', newAlbum)
+      setAlbumDetails({ ...res.data, databaseId: newAlbum.id })
     }
   }, [])
 
@@ -41,8 +39,6 @@ export default function AddReview(props) {
     const res = await AddUserReview(newReviewContent)
     console.log(res, 'hey')
   }
-
-  const handleChange = async (e) => {}
 
   return (
     <div>
