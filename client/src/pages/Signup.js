@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
 
 const iState = {
   email: '',
@@ -15,14 +14,8 @@ export default function Signup() {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    if (formValues.password === formValues.confirmPassword) {
-      const res = await RegisterUser(formValues)
-      console.log(res)
-    } else {
-      console.log('Invalid form data')
-    }
   }
 
   return (
