@@ -1,8 +1,13 @@
-const { Review } = require('../models')
+const { Review, Album, User } = require('../models')
 
 const GetReviews = async (req, res) => {
   try {
-    const reviews = await Review.findAll()
+    const reviews = await Review.findAll({
+      include: [
+        { model: Album, as: 'album' },
+        { model: User, as: 'user' }
+      ]
+    })
     res.send(reviews)
   } catch (error) {
     throw error
@@ -22,7 +27,9 @@ const GetReviewById = async (req, res) => {
 const GetAllReviewsOneAlbum = async (req, res) => {
   try {
     const id = req.params.album_id
-    const review = await Review.findAll({ where: { album_id: id } })
+    const review = await Review.findAll({
+      include: { model: Album, where: { album_id: id } }
+    })
     res.send(review)
   } catch (error) {
     throw error

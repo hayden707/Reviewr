@@ -16,11 +16,14 @@ export default function Feed() {
     <div>
       {reviews.map((review) => (
         <div className="card" key={review.id}>
-          <h3>{review.title}</h3>
           <div>
-            <img src={review.image} alt="review" />
+            <h3>{review.album.title}</h3>
+            <h3>{review.album.artist}</h3>
+            <img src={review.album.image} alt="review" />
+            <h3>by {review.user.username}</h3>
           </div>
-          <p>{review.body.substring(0, 80)}...</p>
+          <p>{review.rating}</p>
+          <p>{review.content.substring(0, 80)}...</p>
         </div>
       ))}
     </div>

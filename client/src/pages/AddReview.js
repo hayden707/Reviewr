@@ -9,6 +9,7 @@ import { GetAlbumDetails } from '../services/DeezerServices'
 export default function AddReview(props) {
   const [reviewContent, setReviewContent] = useState('')
   const [albumDetails, setAlbumDetails] = useState(null)
+  const [rating, setRating] = useState(5)
 
   useEffect(async () => {
     const res = await GetAlbumDetails(props.match.params.album_id)
@@ -17,13 +18,19 @@ export default function AddReview(props) {
     console.log(newAlbum)
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newReviewContent = {
-      content: reviewContent
+      content: reviewContent,
+      rating: rating,
+      user_id: 1,
+      album_id: albumDetails.album.id
     }
-    axios.post(``)
+    const res = await AddUserReview(newReviewContent)
+    console.log(res, 'hey')
   }
+
+  const handleChange = async (e) => {}
 
   return (
     <div>
@@ -40,9 +47,18 @@ export default function AddReview(props) {
       )}
 
       <div>
-        <form>
-          <input type="text" name="review-title"></input>
-          <input type="text" name="review-content" maxLength="500"></input>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="number"
+            name="review-rating"
+            onChange={(e) => setRating(e.target.value)}
+          ></input>
+          <input
+            type="text"
+            name="review-content"
+            maxLength="500"
+            onChange={(e) => setReviewContent(e.target.value)}
+          ></input>
           <button>Submit review</button>
         </form>
       </div>
