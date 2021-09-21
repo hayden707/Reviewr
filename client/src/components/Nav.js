@@ -17,6 +17,9 @@ export default function Nav() {
         <NavLink className="navlink" to="/login">
           Login
         </NavLink>
+        <NavLink className="navlink" to="/search">
+          Search
+        </NavLink>
       </nav>
     </div>
   )
