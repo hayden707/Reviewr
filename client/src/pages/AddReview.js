@@ -10,7 +10,10 @@ export default function AddReview(props) {
   const [reviewContent, setReviewContent] = useState('')
   const [albumDetails, setAlbumDetails] = useState({})
 
-  useEffect(() => {}, [])
+  useEffect(async () => {
+    const res = await GetAlbumDetails(props.match.params.album_id)
+    setAlbumDetails(res.data)
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -25,7 +28,7 @@ export default function AddReview(props) {
       <h3>Add Review Page</h3>
       {props.match.params.album_id}
 
-      <MediaCard />
+      {/* <MediaCard /> */}
 
       <div></div>
     </div>

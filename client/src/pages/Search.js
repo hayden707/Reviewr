@@ -5,7 +5,7 @@ import AddReview from './AddReview'
 import { NavLink } from 'react-router-dom'
 
 export default function Search() {
-  const [albums, setAlbums] = useState('')
+  const [albums, setAlbums] = useState(null)
   const [input, setInput] = useState(null)
 
   const handleSubmit = async (e) => {
