@@ -18,7 +18,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       deezer_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        unique: true
       },
       createdAt: {
         allowNull: false,
