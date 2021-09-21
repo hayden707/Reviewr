@@ -4,6 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.changeColumn('reviews', 'album_id', {
       type: Sequelize.INTEGER,
+      allowNull: false,
       onDelete: 'CASCADE',
       references: {
         model: 'albums',
@@ -15,6 +16,7 @@ module.exports = {
   down: async (queryInterface, Sequelize) => {
     await queryInterface.changeColumn('reviews', 'album_id', {
       type: Sequelize.INTEGER,
+      allowNull: false,
       onDelete: 'CASCADE'
     })
   }

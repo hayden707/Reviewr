@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { DEEZER_BASE_URL } from '../globals'
 import { AddUserReview } from '../services/ReviewsServices'
-import { AddAlbum } from '../services/AlbumServices'
+import { AddAlbum, FindAlbumByDeezerId } from '../services/AlbumServices'
 import MediaCard from '../components/MediaCard'
 import { GetAlbumDetails } from '../services/DeezerServices'
 
@@ -13,9 +13,21 @@ export default function AddReview(props) {
 
   useEffect(async () => {
     const res = await GetAlbumDetails(props.match.params.album_id)
-    setAlbumDetails(res.data)
-    const newAlbum = await AddAlbum(res.data)
-    console.log(newAlbum)
+    const existing = await FindAlbumByDeezerId(res.data.id)
+    if (existing.id) {
+      setAlbumDetails({ ...res.data, databaseId: existing.id })
+    } else {
+      console.log('res.data :>> ', res.data)
+      setAlbumDetails(res.data)
+      const payload = {
+        title: res.data.title,
+        image: res.data.cover_big,
+        artist: res.data.artist.name,
+        deezer_id: res.data.id
+      }
+      const newAlbum = await AddAlbum(payload)
+      console.log('newAlbum :>> ', newAlbum)
+    }
   }, [])
 
   const handleSubmit = async (e) => {
@@ -24,7 +36,7 @@ export default function AddReview(props) {
       content: reviewContent,
       rating: rating,
       user_id: 1,
-      album_id: albumDetails.album.id
+      album_id: albumDetails.databaseId
     }
     const res = await AddUserReview(newReviewContent)
     console.log(res, 'hey')
