@@ -23,7 +23,7 @@ const CreateAlbum = async (req, res) => {
     const album = await Album.create({ ...req.body })
     res.send(album)
   } catch (error) {
-    throw error
+    res.status(409).send({ msg: 'already existing' })
   }
 }
 

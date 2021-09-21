@@ -14,7 +14,8 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.changeColumn('reviews', 'album_id', {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
+      onDelete: 'CASCADE'
     })
   }
 }

@@ -13,6 +13,8 @@ export default function AddReview(props) {
   useEffect(async () => {
     const res = await GetAlbumDetails(props.match.params.album_id)
     setAlbumDetails(res.data)
+    const newAlbum = await AddAlbum(res.data)
+    console.log(newAlbum)
   }, [])
 
   const handleSubmit = (e) => {
