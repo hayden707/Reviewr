@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FindAlbum } from '../services/DeezerServices'
+import { AddAlbum } from '../services/AlbumServices'
 import MediaCard from '../components/MediaCard'
 import AddReview from './AddReview'
 import { NavLink } from 'react-router-dom'
