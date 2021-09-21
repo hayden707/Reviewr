@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { FindAlbum } from '../services/DeezerServices'
+import MediaCard from '../components/MediaCard'
+import AddReview from './AddReview'
+import { NavLink } from 'react-router-dom'
 
 export default function Search() {
   const [albums, setAlbums] = useState([])
@@ -8,7 +11,7 @@ export default function Search() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await FindAlbum(input)
-    setAlbums(res)
+    setAlbums(res.data)
   }
 
   return (
@@ -24,6 +27,9 @@ export default function Search() {
         />
         <button className="search-button">Search</button>
       </form>
+      <NavLink to="/addreview">
+        <MediaCard albums={albums} />
+      </NavLink>
     </div>
   )
 }
