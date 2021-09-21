@@ -19,13 +19,13 @@ export default function AddReview(props) {
     }
     axios.post(``)
   }
-  // leave info for
+
   return (
     <div>
       <h3>Add Review Page</h3>
       {props.match.params.album_id}
 
-      <MediaCard />
+      {/* <MediaCard /> */}
 
       <div></div>
     </div>
