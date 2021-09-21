@@ -19,6 +19,16 @@ const GetReviewById = async (req, res) => {
   }
 }
 
+const GetAllReviewsOneAlbum = async (req, res) => {
+  try {
+    const id = req.params.album_id
+    const review = await Review.findAll({ where: { album_id: id } })
+    res.send(review)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateReview = async (req, res) => {
   try {
     const review = await Review.create({ ...req.body })
@@ -56,6 +66,7 @@ const DeleteReview = async (req, res) => {
 module.exports = {
   GetReviews,
   GetReviewById,
+  GetAllReviewsOneAlbum,
   CreateReview,
   UpdateReview,
   DeleteReview
