@@ -15,15 +15,31 @@ const FindAlbum = async (req, res) => {
       where: { deezer_id: req.params.deezer_id }
     })
     res.send(res)
-  } catch (error) {}
+  } catch (error) {
+    throw error
+  }
+}
+
+const FindAlbumByDeezerId = async (req, res) => {
+  try {
+    const album = await Album.findOne({
+      where: { deezer_id: req.params.deezer_id }
+    })
+    if (album) {
+      return res.send(album)
+    }
+    return res.send({ msg: 'not found' })
+  } catch (error) {
+    return res.status(500).send({ msg: error })
+  }
 }
 
 const CreateAlbum = async (req, res) => {
   try {
     const album = await Album.create({ ...req.body })
-    res.send(album)
+    return res.send(album)
   } catch (error) {
-    res.status(409).send({ msg: 'already existing' })
+    return res.status(409).send({ msg: 'already existing' })
   }
 }
 
@@ -43,6 +59,7 @@ const DeleteAlbum = async (req, res) => {
 module.exports = {
   GetAllAlbums,
   FindAlbum,
+  FindAlbumByDeezerId,
   CreateAlbum,
   DeleteAlbum
 }
