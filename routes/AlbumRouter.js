@@ -11,7 +11,7 @@ router.post(
 router.delete(
   '/:album_id',
   middleware.stripToken,
-  middle.verifyToken,
+  middleware.verifyToken,
   controller.DeleteAlbum
 )
 module.exports = router

@@ -2,7 +2,7 @@ const { User } = require('../models')
 
 const CreateUser = async (req, res) => {
   try {
-    const user = await Review.create({ ...req.body })
+    const user = await User.create({ ...req.body })
     res.send(user)
   } catch (error) {
     throw error
