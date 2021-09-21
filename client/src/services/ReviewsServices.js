@@ -29,7 +29,7 @@ export const GetUserReviews = async () => {
 
 export const AddUserReview = async (data) => {
   try {
-    const res = await Client.post('', data)
+    const res = await Client.post('/reviews', data)
     return res.data
   } catch (error) {
     throw error
