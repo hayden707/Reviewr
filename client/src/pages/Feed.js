@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { GetAllReviews } from '../services/ReviewsServices'
+import { GetAllAlbumReviews } from '../services/ReviewsServices'
 
 export default function Feed() {
   const [reviews, setReviews] = useState([])
 
   const handleReviews = async () => {
-    const data = await GetAllReviews()
+    const data = await GetAllAlbumReviews()
     setReviews(data)
   }
   useEffect(() => {

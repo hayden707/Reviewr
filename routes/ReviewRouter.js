@@ -8,6 +8,19 @@ router.get(
   middleware.verifyToken,
   controller.GetReviews
 )
+router.get(
+  '/:review_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetReviewById
+)
+
+router.get(
+  '/reviews/album/:album_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetAllReviewsOneAlbum
+)
 router.post(
   '/',
   middleware.stripToken,

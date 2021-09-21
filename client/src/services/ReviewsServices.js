@@ -1,17 +1,17 @@
 import Client from './api'
 
-export const GetAllReviews = async () => {
+export const GetAllAlbumReviews = async () => {
   try {
-    const res = await Client.get('')
+    const res = await Client.get('/reviews')
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const GetAlbumReviews = async () => {
+export const GetAlbumReviews = async (id) => {
   try {
-    const res = await Client.get('')
+    const res = await Client.get(`/reviews/album/${id}`)
     return res.data
   } catch (error) {
     throw error

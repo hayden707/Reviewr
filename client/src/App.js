@@ -44,7 +44,11 @@ function App() {
       <Nav />
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            component={() => <Home user={user} authenticated={authenticated} />}
+          />
           <Route exact path="/about" component={About} />
           <Route path="/addreview/:album_id" component={AddReview} />
           <Route
