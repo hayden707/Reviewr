@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
 
 const iState = {
   email: '',
@@ -14,8 +15,14 @@ export default function Signup() {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    if (formValues.password === formValues.confirmPassword) {
+      const res = await RegisterUser(formValues)
+      console.log(res)
+    } else {
+      console.log('Invalid form data')
+    }
   }
 
   return (
@@ -25,7 +32,7 @@ export default function Signup() {
         <label>Email:</label>
         <input
           className="email-signup"
-          type="text"
+          type="email"
           name="email"
           value={formValues.email}
           onChange={handleChange}
