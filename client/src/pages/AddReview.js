@@ -10,7 +10,10 @@ export default function AddReview(props) {
   const [reviewContent, setReviewContent] = useState('')
   const [albumDetails, setAlbumDetails] = useState({})
 
-  useEffect(() => {}, [])
+  useEffect(async () => {
+    const res = await GetAlbumDetails(props.match.params.album_id)
+    setAlbumDetails(res.data)
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
