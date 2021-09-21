@@ -18,6 +18,15 @@ export const FindAlbum = async (data) => {
   }
 }
 
+export const GetAlbumDetails = async (data) => {
+  try {
+    const res = await Client.get(`/album/${data}`)
+    return res
+  } catch (error) {
+    throw error
+  }
+}
+
 export const FindArtist = async (data) => {
   try {
     const res = await Client.get(`/search/artist?q="${data}"`)
