@@ -41,6 +41,9 @@ export default function AddReview(props) {
       email: props.user.email
     }
     const res = await AddUserReview(newReviewContent)
+    if (res.status === 200) {
+      props.history.push('/')
+    }
   }
 
   return (
