@@ -11,7 +11,13 @@ export const GetAllAlbums = async () => {
 
 export const AddAlbum = async (data) => {
   try {
-    const res = await Client.post('', data)
+    const payload = {
+      title: data.title,
+      image: data.cover_big,
+      artist: data.artist.name,
+      deezer_id: data.id
+    }
+    const res = await Client.post('/albums', payload)
     return res.data
   } catch (error) {
     throw error
