@@ -1,15 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
+
+const iState = {
+  email: '',
+  username: '',
+  password: '',
+  confirmPassword: ''
+}
 
 export default function Signup() {
+  const [formValues, setFormValues] = useState(iState)
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (formValues.password === formValues.confirmPassword) {
+      const res = await RegisterUser(formValues)
+      console.log(res)
+    } else {
+      console.log('Invalid form data')
+    }
+  }
+
   return (
     <div>
       <h2>Let's get started.</h2>
-      <form className="signup-form">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
           className="email-signup"
-          type="text"
+          type="email"
           name="email"
+          value={formValues.email}
+          onChange={handleChange}
           required
         ></input>
         <label>Username:</label>
@@ -17,20 +43,26 @@ export default function Signup() {
           className="username-signup"
           type="text"
           name="username"
+          value={formValues.username}
+          onChange={handleChange}
           required
         ></input>
         <label>Password:</label>
         <input
           className="password-signup"
-          type="text"
+          type="password"
           name="password"
+          value={formValues.password}
+          onChange={handleChange}
           required
         ></input>
         <label>Confirm Password:</label>
         <input
           className="confirm-password-signup"
-          type="text"
-          name="confirm-password"
+          type="password"
+          name="confirmPassword"
+          value={formValues.confirmPassword}
+          onChange={handleChange}
           required
         ></input>
         <button className="signup-button">Signup Now</button>
