@@ -18,7 +18,7 @@ export default function Feed() {
         <div className="card" key={review.id}>
           <h3>{review.title}</h3>
           <div>
-            <img src={review.image} />
+            <img src={review.image} alt="review" />
           </div>
           <p>{review.body.substring(0, 80)}...</p>
         </div>

@@ -6,7 +6,7 @@ import AddReview from './AddReview'
 import { NavLink } from 'react-router-dom'
 
 export default function Search() {
-  const [albums, setAlbums] = useState([])
+  const [albums, setAlbums] = useState(null)
   const [input, setInput] = useState(null)
 
   const handleSubmit = async (e) => {
@@ -28,9 +28,7 @@ export default function Search() {
         />
         <button className="search-button">Search</button>
       </form>
-      <NavLink to="/addreview">
-        <MediaCard albums={albums} />
-      </NavLink>
+      {albums && albums.map((album) => <MediaCard {...album} />)}
     </div>
   )
 }

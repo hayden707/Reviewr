@@ -46,7 +46,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/addreview" component={AddReview} />
+          <Route path="/addreview/:album_id" component={AddReview} />
           <Route
             exact
             path="/login"

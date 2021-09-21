@@ -1,5 +1,23 @@
 const { Album } = require('../models')
 
+const GetAllAlbums = async (req, res) => {
+  try {
+    const album = await Album.findAll()
+    res.send(album)
+  } catch (error) {
+    throw error
+  }
+}
+
+const FindAlbum = async (req, res) => {
+  try {
+    const res = await Album.findAll({
+      where: { deezer_id: req.params.deezer_id }
+    })
+    res.send(res)
+  } catch (error) {}
+}
+
 const CreateAlbum = async (req, res) => {
   try {
     const album = await Album.create({ ...req.body })
@@ -23,6 +41,8 @@ const DeleteAlbum = async (req, res) => {
 }
 
 module.exports = {
+  GetAllAlbums,
+  FindAlbum,
   CreateAlbum,
   DeleteAlbum
 }
