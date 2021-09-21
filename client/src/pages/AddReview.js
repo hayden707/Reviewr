@@ -31,7 +31,9 @@ export default function AddReview(props) {
 
       {albumDetails && (
         <div>
-          <h3>{albumDetails.title}</h3>
+          <h3>
+            {albumDetails.title} ({albumDetails.release_date})
+          </h3>
           <h4>{albumDetails.artist.name}</h4>
           <img src={albumDetails.cover} />
         </div>
