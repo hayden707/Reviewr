@@ -12,8 +12,11 @@ export default function AddReview(props) {
   const [rating, setRating] = useState(5)
 
   useEffect(async () => {
+    // External API request for album details
     const res = await GetAlbumDetails(props.match.params.album_id)
+    // Local API request, check if album exists in database
     const existing = await FindAlbumByDeezerId(res.data.id)
+    // If albums exists in local API
     if (existing.id) {
       setAlbumDetails({ ...res.data, databaseId: existing.id })
     } else {
@@ -33,11 +36,11 @@ export default function AddReview(props) {
     const newReviewContent = {
       content: reviewContent,
       rating: rating,
-      user_id: 1,
-      album_id: albumDetails.databaseId
+      album_id: albumDetails.databaseId,
+      user_id: props.user.id,
+      email: props.user.email
     }
     const res = await AddUserReview(newReviewContent)
-    console.log(res, 'hey')
   }
 
   return (
