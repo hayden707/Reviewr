@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       image: DataTypes.STRING,
       artist: DataTypes.STRING,
-      deezer_id: DataTypes.INTEGER
+      deezer_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true
+      }
     },
     {
       sequelize,
