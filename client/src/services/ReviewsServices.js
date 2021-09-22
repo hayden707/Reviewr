@@ -45,9 +45,9 @@ export const EditUserReview = async (id, data) => {
   }
 }
 
-export const DeleteReview = async (id, data) => {
+export const DeleteReview = async (id) => {
   try {
-    const res = await Client.delete(`/reviews/user/${id}`, data)
+    const res = await Client.delete(`/reviews/${id}`)
     return res.data
   } catch (error) {
     throw error
