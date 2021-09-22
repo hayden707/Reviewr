@@ -12,6 +12,7 @@ import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
 import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
+import AlbumReviews from './pages/AlbumReviews'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
