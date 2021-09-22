@@ -27,8 +27,6 @@ export default function Feed() {
               <p>{review.rating}</p>
               <p>{review.content.substring(0, 80)}...</p>
             </div>
-            <p>{review.rating}</p>
-            <p>{review.content.substring(0, 80)}</p>
           </div>
         ))}
     </div>
