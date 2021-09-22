@@ -4,15 +4,13 @@ import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 
 export default function UserProfile(props) {
   const [userReviews, setUserReviews] = useState([])
+  const [sameUserReviews, setSameUserReviews] = useState(false)
 
   const handleUserReviews = async () => {
     const data = await GetUserReviews(props.match.params.user_id)
     setUserReviews(data.reverse())
     console.log(data)
   }
-  useEffect(() => {
-    handleUserReviews()
-  }, [])
 
   const deleteReview = async (id) => {
     const res = await DeleteReview(id)
@@ -24,6 +22,15 @@ export default function UserProfile(props) {
     setUserReviews(newUserReviews)
   }
 
+  const checkIfSameUser = async () => {
+    if (props.match.params.user_id == parseInt(localStorage.getItem.userId)) {
+      return setSameUserReviews(true)
+    }
+  }
+  useEffect(() => {
+    handleUserReviews()
+    // checkIfSameUser()
+  }, [])
   return (
     <div>
       {userReviews &&
@@ -38,14 +45,17 @@ export default function UserProfile(props) {
               </div>
               <p>{review.rating}</p>
               <p>{review.content.substring(0, 80)}</p>
-              <button>Edit review</button>
-              <button
-                onClick={() => {
-                  deleteReview(review.id)
-                }}
-              >
-                Delete review
-              </button>
+              {/* {sameUserReviews && ( */}
+              <div>
+                <button>Edit review</button>
+                <button
+                  onClick={() => {
+                    deleteReview(review.id)
+                  }}
+                >
+                  Delete review
+                </button>
+              </div>
             </div>
           </div>
         ))}
