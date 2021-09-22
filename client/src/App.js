@@ -10,7 +10,7 @@ import Reviews from './pages/Reviews'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
-import Feed from './pages/Feed'
+// import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
 import AlbumReviews from './pages/AlbumReviews'
 
@@ -70,11 +70,15 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/userprofile" component={UserProfile} />
+<<<<<<< HEAD
+          {/* <Route exact path="/feed" component={Feed} /> */}
+=======
           <Route exact path="/feed" component={Feed} />
           <Route
             path="/albumreviews/:album_id"
             component={(props) => <AlbumReviews {...props} />}
           />
+>>>>>>> main
         </Switch>
       </main>
     </div>
