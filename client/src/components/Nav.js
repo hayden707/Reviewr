@@ -25,6 +25,9 @@ export default function Nav() {
         <NavLink className="navlink" to="/albumreviews/">
           Albums
         </NavLink>
+        <NavLink className="navlink" to="/userprofile/">
+          Profile
+        </NavLink>
         <button>Logout</button>
       </nav>
     </div>
