@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { CheckSession } from '../services/Auth'
 
 export default function Logout(props) {
   const [user, setUser] = useState(null)
@@ -7,17 +6,18 @@ export default function Logout(props) {
     false || localStorage.getItem('authenticated')
   )
 
-  const handleLogOut = () => {
+  const handleLogOut = (props) => {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
   }
-  // handleLogOut()
 
   return (
     <div>
       <form className="logout-form">
-        <button className="logout-button">Logout</button>
+        <button className="logout-button" onClick={handleLogOut}>
+          Logout
+        </button>
       </form>
     </div>
   )

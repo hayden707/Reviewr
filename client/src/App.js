@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav handleLogOut={handleLogOut} />
       <main>
         <Switch>
           <Route exact path="/signup" component={Signup} />

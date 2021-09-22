@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 import musicnote from '../images/musicnote.png'
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     <div className="Nav">
       <nav className="navbar">
@@ -11,6 +11,7 @@ export default function Nav() {
           <NavLink className="navlink" to="/">
             <img src={musicnote} id="app-logo" alt="music-note" />
           </NavLink>
+          Reviewr
         </p>
 
         <NavLink className="navlink" to="/about">
@@ -31,7 +32,7 @@ export default function Nav() {
         <NavLink className="navlink" to="/userprofile/">
           Profile
         </NavLink>
-        <button>Logout</button>
+        <button onClick={props.handleLogOut}>Logout</button>
       </nav>
     </div>
   )
