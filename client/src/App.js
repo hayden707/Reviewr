@@ -69,7 +69,7 @@ function App() {
           <Route exact path="/reviews" component={Reviews} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/userprofile" component={UserProfile} />
+          <Route exact path="/userprofile/:user_id" component={UserProfile} />
           <Route exact path="/feed" component={Feed} />
           <Route
             path="/albumreviews/:album_id"

@@ -38,6 +38,21 @@ const GetAllReviewsOneAlbum = async (req, res) => {
   }
 }
 
+const GetAllReviewsOneUser = async (req, res) => {
+  try {
+    const id = req.params.user_id
+    const review = await Review.findAll({
+      include: [
+        { model: User, as: 'user', where: { id: id } },
+        { model: Album, as: 'album' }
+      ]
+    })
+    res.send(review)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateReview = async (req, res) => {
   try {
     const user = await User.findOne({
@@ -84,6 +99,7 @@ module.exports = {
   GetReviews,
   GetReviewById,
   GetAllReviewsOneAlbum,
+  GetAllReviewsOneUser,
   CreateReview,
   UpdateReview,
   DeleteReview
