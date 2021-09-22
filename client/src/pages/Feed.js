@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { GetAllAlbumReviews } from '../services/ReviewsServices'
-
+import './Feed.css'
 export default function Feed() {
   const [reviews, setReviews] = useState([])
 
