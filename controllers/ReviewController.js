@@ -7,7 +7,13 @@ const GetReviews = async (req, res) => {
     const reviews = await Review.findAll({
       include: [
         { model: Album, as: 'album' },
-        { model: User, as: 'user' }
+        {
+          model: User,
+          as: 'user',
+          attributes: {
+            exclude: ['password_digest']
+          }
+        }
       ]
     })
     res.send(reviews)
@@ -28,7 +34,10 @@ const GetReviewById = async (req, res) => {
         },
         {
           model: User,
-          as: 'user'
+          as: 'user',
+          attributes: {
+            exclude: ['password_digest']
+          }
         }
       ]
     })
@@ -55,7 +64,14 @@ const GetAllReviewsOneUser = async (req, res) => {
     const id = req.params.user_id
     const review = await Review.findAll({
       include: [
-        { model: User, as: 'user', where: { id: id } },
+        {
+          model: User,
+          as: 'user',
+          attributes: {
+            exclude: ['password_digest']
+          },
+          where: { id: id }
+        },
         { model: Album, as: 'album' }
       ]
     })
