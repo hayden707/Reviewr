@@ -14,9 +14,15 @@ export default function UserProfile(props) {
     handleUserReviews()
   }, [])
 
-  // const deleteReview = async (e) => {
-  //   const res = await DeleteReview()
-  // }
+  const deleteReview = async (id) => {
+    const res = await DeleteReview(id)
+    const newUserReviews = userReviews.filter((review) => {
+      if (review.id !== id) {
+        return true
+      }
+    })
+    setUserReviews(newUserReviews)
+  }
 
   return (
     <div>
@@ -33,7 +39,13 @@ export default function UserProfile(props) {
               <p>{review.rating}</p>
               <p>{review.content.substring(0, 80)}</p>
               <button>Edit review</button>
-              <button>Delete review</button>
+              <button
+                onClick={() => {
+                  deleteReview(review.id)
+                }}
+              >
+                Delete review
+              </button>
             </div>
           </div>
         ))}
