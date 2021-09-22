@@ -17,12 +17,10 @@ export default function Nav() {
         <NavLink className="navlink" to="/login">
           Login
         </NavLink>
-        <NavLink className="navLink" to="/logout">
-          Logout
-        </NavLink>
         <NavLink className="navlink" to="/search">
           Search
         </NavLink>
+        <button>Logout</button>
       </nav>
     </div>
   )
