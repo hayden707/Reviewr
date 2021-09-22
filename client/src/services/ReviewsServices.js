@@ -47,7 +47,7 @@ export const AddUserReview = async (data) => {
 
 export const EditUserReview = async (id, data) => {
   try {
-    const res = await Client.put(`/reviews/user/${id}`, data)
+    const res = await Client.put(`/reviews/${id}`, data)
     return res.data
   } catch (error) {
     throw error
