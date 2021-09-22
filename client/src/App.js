@@ -53,7 +53,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route
             path="/addreview/:album_id"
-            component={(props) => <AddReview {...props} />}
+            component={(props) => <AddReview {...props} user={user} />}
           />
           <Route
             exact
