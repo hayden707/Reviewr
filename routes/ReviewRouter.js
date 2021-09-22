@@ -14,7 +14,12 @@ router.get(
   middleware.verifyToken,
   controller.GetReviewById
 )
-
+router.get(
+  '/average/:album_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetAverageReviews
+)
 router.get(
   '/album/:album_id',
   middleware.stripToken,

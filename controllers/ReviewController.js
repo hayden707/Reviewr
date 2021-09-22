@@ -1,5 +1,4 @@
-const { Review, Album, User } = require('../models')
-const middleware = require('../middleware')
+const { Review, Album, User, Sequelize } = require('../models')
 const { Op } = require('sequelize')
 
 const GetReviews = async (req, res) => {
@@ -22,10 +21,27 @@ const GetReviews = async (req, res) => {
   }
 }
 
+const GetAverageReviews = async (req, res) => {
+  try {
+    const id = req.params.album_id
+    const average = await Review.findAll({
+      attributes: [
+        'album_id',
+        [Sequelize.fn('AVG', Sequelize.col('rating')), 'average_rating']
+      ],
+      group: ['album_id'],
+      where: { album_id: id }
+    })
+    res.send(average)
+  } catch (error) {
+    res.status(400).send({ error: error })
+  }
+}
+
 const GetReviewById = async (req, res) => {
   try {
     const id = req.params.review_id
-    const review = await Review.findOne({
+    const review = await Review.findAll({
       where: { id: id },
       include: [
         {
@@ -43,7 +59,7 @@ const GetReviewById = async (req, res) => {
     })
     res.send(review)
   } catch (error) {
-    throw error
+    res.status(400).send({ error: error })
   }
 }
 
@@ -134,6 +150,7 @@ const DeleteReview = async (req, res) => {
 module.exports = {
   GetReviews,
   GetReviewById,
+  GetAverageReviews,
   GetAllReviewsOneAlbum,
   GetAllReviewsOneUser,
   CreateReview,
