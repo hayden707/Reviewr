@@ -102,7 +102,7 @@ function App() {
             authenticated={authenticated}
             user={user}
             exact
-            path="/userprofile"
+            path="/userprofile/:user_id"
             component={UserProfile}
           />
           <ProtectedRoute
