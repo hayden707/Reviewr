@@ -43,3 +43,5 @@ We will also implement an authorization system so that only registered users wil
 - [ ] Add TMDB API to review movies
 
 ### **_Credits_**
+
+- Music Logo from PNGEgg
