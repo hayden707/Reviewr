@@ -15,6 +15,7 @@ import { CheckSession } from './services/Auth'
 import AlbumReviews from './pages/AlbumReviews'
 import ProtectedRoute from './components/ProtectedRoute'
 import Logout from './pages/Logout'
+import EditReview from './pages/EditReview'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -118,6 +119,13 @@ function App() {
             user={user}
             path="/albumreviews/:album_id"
             component={(props) => <AlbumReviews {...props} />}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/editreview/:review_id"
+            component={EditReview}
           />
         </Switch>
       </main>
