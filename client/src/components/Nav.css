@@ -1,0 +1,29 @@
+div.Nav {
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  background-color: #3316f2;
+  color: #ffffff;
+}
+
+nav.navbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav.navbar > p {
+  margin-right: 40%;
+}
+
+nav.navbar > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav.navbar > a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
