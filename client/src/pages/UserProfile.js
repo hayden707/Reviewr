@@ -10,6 +10,7 @@ export default function UserProfile(props) {
   const handleUserReviews = async () => {
     const data = await GetUserReviews(props.match.params.user_id)
     setUserReviews(data.reverse())
+    console.log(data)
   }
 
   const deleteReview = async (id) => {
@@ -23,13 +24,13 @@ export default function UserProfile(props) {
   }
 
   const checkIfSameUser = async () => {
-    if (props.match.params.user_id === localStorage.getItem('userId')) {
-      setSameUserReviews(true)
+    if (props.match.params.user_id == parseInt(localStorage.getItem.userId)) {
+      return setSameUserReviews(true)
     }
   }
   useEffect(() => {
     handleUserReviews()
-    checkIfSameUser()
+    // checkIfSameUser()
   }, [])
   return (
     <div>
@@ -47,7 +48,9 @@ export default function UserProfile(props) {
               <p>{review.content.substring(0, 80)}</p>
               {sameUserReviews && (
                 <div>
-                  <button>Edit review</button>
+                  <Link to={`/editreview/:review_id`}>
+                    <button>Edit review</button>
+                  </Link>
                   <button
                     onClick={() => {
                       deleteReview(review.id)
