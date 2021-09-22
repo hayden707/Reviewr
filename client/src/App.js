@@ -13,6 +13,7 @@ import UserProfile from './pages/UserProfile'
 import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
 import AlbumReviews from './pages/AlbumReviews'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -45,16 +46,8 @@ function App() {
       <Nav />
       <main>
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => <Home user={user} authenticated={authenticated} />}
-          />
+          <Route exact path="/signup" component={Signup} />
           <Route exact path="/about" component={About} />
-          <Route
-            path="/addreview/:album_id"
-            component={(props) => <AddReview {...props} user={user} />}
-          />
           <Route
             exact
             path="/login"
@@ -66,12 +59,50 @@ function App() {
               />
             )}
           />
-          <Route exact path="/reviews" component={Reviews} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/userprofile" component={UserProfile} />
-          <Route exact path="/feed" component={Feed} />
-          <Route
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/"
+            component={() => <Home user={user} authenticated={authenticated} />}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            path="/addreview/:album_id"
+            component={(props) => <AddReview {...props} user={user} />}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/reviews"
+            component={Reviews}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/search"
+            component={Search}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/userprofile"
+            component={UserProfile}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/feed"
+            component={Feed}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
             path="/albumreviews/:album_id"
             component={(props) => <AlbumReviews {...props} />}
           />
