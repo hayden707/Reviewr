@@ -6,12 +6,9 @@ export default function Feed() {
 
   const handleReviews = async () => {
     const data = await GetAllAlbumReviews()
-<<<<<<< HEAD
-    setReviews(data)
-    console.log(data)
-=======
+
     setReviews(data.reverse())
->>>>>>> main
+
   }
   useEffect(() => {
     handleReviews()
@@ -31,7 +28,14 @@ export default function Feed() {
             <p>{review.rating}</p>
             <p>{review.content.substring(0, 80)}...</p>
           </div>
-        ))}
+
+      
+
+          <p>{review.rating}</p>
+          <p>{review.content.substring(0, 80)}</p>
+        </div>
+      ))}
+
     </div>
   )
 }
