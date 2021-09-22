@@ -47,7 +47,9 @@ export default function UserProfile(props) {
               <p>{review.content.substring(0, 80)}</p>
               {sameUserReviews && (
                 <div>
-                  <button>Edit review</button>
+                  <Link to={`/editreview/:review_id`}>
+                    <button>Edit review</button>
+                  </Link>
                   <button
                     onClick={() => {
                       deleteReview(review.id)

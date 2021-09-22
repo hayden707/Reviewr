@@ -21,7 +21,11 @@ export default function Feed() {
               <div>
                 <h3>{review.album.title}</h3>
                 <h3>{review.album.artist}</h3>
-                <img src={review.album.image} alt="review" />
+                <img
+                  src={review.album.image}
+                  className="album-image"
+                  alt="review"
+                />
                 <h3>by {review.user.username}</h3>
               </div>
               <p>{review.rating}</p>
