@@ -70,11 +70,13 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/userprofile" component={UserProfile} />
+
           <Route exact path="/feed" component={Feed} />
           <Route
             path="/albumreviews/:album_id"
             component={(props) => <AlbumReviews {...props} />}
           />
+
         </Switch>
       </main>
     </div>
