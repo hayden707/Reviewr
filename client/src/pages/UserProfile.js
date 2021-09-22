@@ -1,5 +1,6 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { GetUserReviews } from '../services/ReviewsServices'
+import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 
 export default function UserProfile(props) {
   const [userReviews, setUserReviews] = useState([])
@@ -12,6 +13,10 @@ export default function UserProfile(props) {
   useEffect(() => {
     handleUserReviews()
   }, [])
+
+  // const deleteReview = async (e) => {
+  //   const res = await DeleteReview()
+  // }
 
   return (
     <div>
@@ -27,6 +32,8 @@ export default function UserProfile(props) {
               </div>
               <p>{review.rating}</p>
               <p>{review.content.substring(0, 80)}</p>
+              <button>Edit review</button>
+              <button>Delete review</button>
             </div>
           </div>
         ))}
