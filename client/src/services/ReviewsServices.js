@@ -11,16 +11,16 @@ export const GetAllAlbumReviews = async () => {
 
 export const GetAlbumReviews = async (id) => {
   try {
-    const res = await Client.get(`/reviews/for/album/${id}`)
+    const res = await Client.get(`/reviews/album/${id}`)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const GetUserReviews = async () => {
+export const GetUserReviews = async (id) => {
   try {
-    const res = await Client.get('')
+    const res = await Client.get(`/reviews/user/${id}`)
     return res.data
   } catch (error) {
     throw error

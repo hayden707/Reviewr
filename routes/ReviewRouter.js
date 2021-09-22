@@ -16,10 +16,17 @@ router.get(
 )
 
 router.get(
-  '/for/album/:album_id',
+  '/album/:album_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.GetAllReviewsOneAlbum
+)
+
+router.get(
+  '/user/:user_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetAllReviewsOneUser
 )
 router.post(
   '/',
