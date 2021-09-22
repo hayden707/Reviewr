@@ -25,7 +25,7 @@ export default function Feed() {
                 <h3>by {review.user.username}</h3>
               </div>
               <p>{review.rating}</p>
-              <p>{review.content.substring(0, 80)}...</p>
+              <p>{review.content.substring(0, 80)}</p>
             </div>
           </div>
         ))}
