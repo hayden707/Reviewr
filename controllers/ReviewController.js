@@ -19,7 +19,19 @@ const GetReviews = async (req, res) => {
 const GetReviewById = async (req, res) => {
   try {
     const id = req.params.review_id
-    const review = await Review.findByPk(id)
+    const review = await Review.findOne({
+      where: { id: id },
+      include: [
+        {
+          model: Album,
+          as: 'album'
+        },
+        {
+          model: User,
+          as: 'user'
+        }
+      ]
+    })
     res.send(review)
   } catch (error) {
     throw error
@@ -72,11 +84,19 @@ const CreateReview = async (req, res) => {
 
 const UpdateReview = async (req, res) => {
   try {
-    const review = await Review.update(
-      { ...req.body },
-      { where: { id: req.params.review_id }, returning: true }
-    )
-    res.send(review)
+    const user = await User.findOne({
+      where: {
+        [Op.and]: [{ id: req.body.user_id }, { email: req.body.email }]
+      }
+    })
+    if (user) {
+      const review = await Review.update(
+        { ...req.body },
+        { where: { id: req.params.review_id }, returning: true }
+      )
+      return res.send(review)
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
     throw error
   }
