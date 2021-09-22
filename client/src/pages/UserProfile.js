@@ -30,7 +30,7 @@ export default function UserProfile(props) {
   }
   useEffect(() => {
     handleUserReviews()
-    // checkIfSameUser()
+    checkIfSameUser()
   }, [])
   return (
     <div>
