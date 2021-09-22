@@ -24,7 +24,7 @@ export default function UserProfile(props) {
   }
 
   const checkIfSameUser = async () => {
-    if (props.match.params.user_id == parseInt(localStorage.getItem.userId)) {
+    if (props.match.params.user_id === localStorage.getItem('userId')) {
       return setSameUserReviews(true)
     }
   }
