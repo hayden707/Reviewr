@@ -15,7 +15,7 @@ export default function UserProfile(props) {
 
   return (
     <div>
-      {/* {userReviews &&
+      {userReviews &&
         userReviews.map((review) => (
           <div>
             <div className="card" key={review.id}>
@@ -29,7 +29,7 @@ export default function UserProfile(props) {
               <p>{review.content.substring(0, 80)}</p>
             </div>
           </div>
-        ))} */}
+        ))}
     </div>
   )
 }
