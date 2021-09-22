@@ -12,7 +12,7 @@ export const GetAllAlbumReviews = async () => {
 export const GetAlbumReviews = async (id) => {
   try {
     const res = await Client.get(`/reviews/for/album/${id}`)
-    return res
+    return res.data
   } catch (error) {
     throw error
   }

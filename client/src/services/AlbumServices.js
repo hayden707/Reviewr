@@ -9,6 +9,15 @@ export const GetAllAlbums = async () => {
   }
 }
 
+export const FindAlbumById = async (id) => {
+  try {
+    const res = await Client.get(`/albums/findById/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const FindAlbumByDeezerId = async (id) => {
   try {
     const res = await Client.get(`/albums/find/${id}`)
