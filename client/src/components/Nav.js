@@ -20,6 +20,9 @@ export default function Nav() {
         <NavLink className="navlink" to="/search">
           Search
         </NavLink>
+        <NavLink className="navlink" to="/albumreviews/">
+          Albums
+        </NavLink>
         <button>Logout</button>
       </nav>
     </div>

@@ -105,6 +105,7 @@ function App() {
             path="/userprofile/:user_id"
             component={UserProfile}
           />
+
           <ProtectedRoute
             authenticated={authenticated}
             user={user}
