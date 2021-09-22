@@ -14,6 +14,7 @@ import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
 import AlbumReviews from './pages/AlbumReviews'
 import ProtectedRoute from './components/ProtectedRoute'
+import Logout from './pages/Logout'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -53,6 +54,17 @@ function App() {
             path="/login"
             component={(props) => (
               <Login
+                {...props}
+                setUser={setUser}
+                toggleAuthenticated={toggleAuthenticated}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/logout"
+            component={(props) => (
+              <Logout
                 {...props}
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
