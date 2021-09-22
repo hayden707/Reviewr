@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { GetAllAlbumReviews } from '../services/ReviewsServices'
 import './Feed.css'
+import { Link } from 'react-router-dom'
+
 export default function Feed() {
   const [reviews, setReviews] = useState([])
 
@@ -26,7 +28,9 @@ export default function Feed() {
                   className="album-image"
                   alt="review"
                 />
-                <h3>by {review.user.username}</h3>
+                <Link to={`/userprofile/${review.user.id}`}>
+                  <h3>by {review.user.username}</h3>
+                </Link>
               </div>
               <p>{review.rating}</p>
               <p>{review.content.substring(0, 80)}</p>
