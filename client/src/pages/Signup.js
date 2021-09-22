@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
 
 const iState = {
   email: '',
@@ -7,15 +8,21 @@ const iState = {
   confirmPassword: ''
 }
 
-export default function Signup() {
+export default function Signup(props) {
   const [formValues, setFormValues] = useState(iState)
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    if (formValues.password === formValues.confirmPassword) {
+      const res = await RegisterUser(formValues)
+      if (res.status === 200) {
+        props.history.push('/login')
+      }
+    }
   }
 
   return (

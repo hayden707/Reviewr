@@ -20,6 +20,20 @@ const FindAlbum = async (req, res) => {
   }
 }
 
+const FindAlbumById = async (req, res) => {
+  try {
+    const album = await Album.findOne({
+      where: { id: req.params.album_id }
+    })
+    if (album) {
+      return res.send(album)
+    }
+    return res.send({ msg: 'not found' })
+  } catch (error) {
+    return res.status(500).send({ msg: error })
+  }
+}
+
 const FindAlbumByDeezerId = async (req, res) => {
   try {
     const album = await Album.findOne({
@@ -59,6 +73,7 @@ const DeleteAlbum = async (req, res) => {
 module.exports = {
   GetAllAlbums,
   FindAlbum,
+  FindAlbumById,
   FindAlbumByDeezerId,
   CreateAlbum,
   DeleteAlbum
