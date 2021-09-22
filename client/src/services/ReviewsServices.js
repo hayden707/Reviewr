@@ -36,18 +36,18 @@ export const AddUserReview = async (data) => {
   }
 }
 
-export const EditUserReview = async (data) => {
+export const EditUserReview = async (id, data) => {
   try {
-    const res = await Client.put('', data)
+    const res = await Client.put(`/reviews/user/${id}`, data)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const DeleteReview = async (data) => {
+export const DeleteReview = async (id, data) => {
   try {
-    const res = await Client.delete('', data)
+    const res = await Client.delete(`/reviews/user/${id}`, data)
     return res.data
   } catch (error) {
     throw error
