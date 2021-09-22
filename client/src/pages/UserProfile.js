@@ -48,7 +48,7 @@ export default function UserProfile(props) {
               <p>{review.content.substring(0, 80)}</p>
               {sameUserReviews && (
                 <div>
-                  <Link to={`/editreview/:review_id`}>
+                  <Link to={`/editreview/${review.id}`}>
                     <button>Edit review</button>
                   </Link>
                   <button
