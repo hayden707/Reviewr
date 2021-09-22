@@ -30,7 +30,7 @@ const GetAllReviewsOneAlbum = async (req, res) => {
   try {
     const id = req.params.album_id
     const review = await Review.findAll({
-      include: { model: Album, where: { album_id: id } }
+      include: { model: Album, as: 'album', where: { id: id } }
     })
     res.send(review)
   } catch (error) {

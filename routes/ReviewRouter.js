@@ -16,7 +16,7 @@ router.get(
 )
 
 router.get(
-  '/reviews/album/:album_id',
+  '/for/album/:album_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.GetAllReviewsOneAlbum
