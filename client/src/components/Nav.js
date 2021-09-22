@@ -1,15 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
+import musicnote from '../images/musicnote.png'
 
 export default function Nav() {
   return (
     <div className="Nav">
       <nav className="navbar">
-        <p>Reviewr</p>
-        <NavLink className="navlink" to="/">
-          Home
-        </NavLink>
+        <p>
+          <NavLink className="navlink" to="/">
+            <img src={musicnote} id="app-logo" alt="music-note" />
+          </NavLink>
+        </p>
+
         <NavLink className="navlink" to="/about">
           About
         </NavLink>
