@@ -12,6 +12,7 @@ import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
 // import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
+import AlbumReviews from './pages/AlbumReviews'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -50,7 +51,10 @@ function App() {
             component={() => <Home user={user} authenticated={authenticated} />}
           />
           <Route exact path="/about" component={About} />
-          <Route path="/addreview/:album_id" component={AddReview} />
+          <Route
+            path="/addreview/:album_id"
+            component={(props) => <AddReview {...props} user={user} />}
+          />
           <Route
             exact
             path="/login"
@@ -66,7 +70,15 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/userprofile" component={UserProfile} />
+<<<<<<< HEAD
           {/* <Route exact path="/feed" component={Feed} /> */}
+=======
+          <Route exact path="/feed" component={Feed} />
+          <Route
+            path="/albumreviews/:album_id"
+            component={(props) => <AlbumReviews {...props} />}
+          />
+>>>>>>> main
         </Switch>
       </main>
     </div>

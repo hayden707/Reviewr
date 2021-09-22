@@ -6,8 +6,12 @@ export default function Feed() {
 
   const handleReviews = async () => {
     const data = await GetAllAlbumReviews()
+<<<<<<< HEAD
     setReviews(data)
     console.log(data)
+=======
+    setReviews(data.reverse())
+>>>>>>> main
   }
   useEffect(() => {
     handleReviews()

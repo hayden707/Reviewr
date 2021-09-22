@@ -14,6 +14,12 @@ router.get(
   middleware.verifyToken,
   controller.FindAlbumByDeezerId
 )
+router.get(
+  '/findById/:album_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.FindAlbumById
+)
 router.post(
   '/',
   middleware.stripToken,

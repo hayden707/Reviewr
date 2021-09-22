@@ -1,4 +1,6 @@
 const { Review, Album, User } = require('../models')
+const middleware = require('../middleware')
+const { Op } = require('sequelize')
 
 const GetReviews = async (req, res) => {
   try {
@@ -28,7 +30,7 @@ const GetAllReviewsOneAlbum = async (req, res) => {
   try {
     const id = req.params.album_id
     const review = await Review.findAll({
-      include: { model: Album, where: { album_id: id } }
+      include: { model: Album, as: 'album', where: { id: id } }
     })
     res.send(review)
   } catch (error) {
@@ -38,8 +40,16 @@ const GetAllReviewsOneAlbum = async (req, res) => {
 
 const CreateReview = async (req, res) => {
   try {
-    const review = await Review.create({ ...req.body })
-    res.send(review)
+    const user = await User.findOne({
+      where: {
+        [Op.and]: [{ id: req.body.user_id }, { email: req.body.email }]
+      }
+    })
+    if (user) {
+      const review = await Review.create({ ...req.body })
+      return res.send(review)
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
     throw error
   }
