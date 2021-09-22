@@ -3,4 +3,11 @@ body {
   font-family: 'Jost', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #12111d;
+  color: #ffffff;
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px #000000ab;
 }
