@@ -16,6 +16,7 @@ import AlbumReviews from './pages/AlbumReviews'
 import ProtectedRoute from './components/ProtectedRoute'
 import Logout from './pages/Logout'
 import EditReview from './pages/EditReview'
+import MediaDetails from './components/MediaDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -130,6 +131,13 @@ function App() {
             exact
             path="/editreview/:review_id"
             component={EditReview}
+          />
+          <ProtectedRoute
+            authenticated={authenticated}
+            user={user}
+            exact
+            path="/albumdetails/:album_id"
+            component={(props) => <MediaDetails {...props} />}
           />
         </Switch>
       </main>

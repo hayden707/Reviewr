@@ -64,7 +64,7 @@ export default function AddReview(props) {
           <input
             type="text"
             name="review-content"
-            maxLength="500"
+            maxLength="5000"
             onChange={(e) => setReviewContent(e.target.value)}
           ></input>
           <button>Submit review</button>

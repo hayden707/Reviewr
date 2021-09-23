@@ -42,7 +42,11 @@ export default function UserProfile(props) {
                 <h3>{review.album.title}</h3>
                 <h3>{review.album.artist}</h3>
                 <Link to={`/albumreviews/${review.album_id}`}>
-                  <img src={review.album.image} alt="review" />
+                  <img
+                    src={review.album.image}
+                    class="album-cover"
+                    alt="review"
+                  />
                 </Link>
                 <h3>by {review.user.username}</h3>
               </div>
