@@ -12,12 +12,14 @@ export default function Landing() {
           <h3>Review music your way.</h3>
           <p>
             User generated reviews written by normal people, for normal people.
-            Rate and keep a list of the music you've been listening to, and see
-            what other listeners think.
+            Your one site stop to listen, rate, and write about the albums you
+            love (and trash the ones you don't).
           </p>
-          <button>Sign up now.</button>
+          <Link to="/signup">
+            <button>Sign up now.</button>
+          </Link>
           <p>Already registered?</p>
-          <Link>Log in here.</Link>
+          <Link to="/login">Log in here.</Link>
         </div>
       </div>
     </div>
