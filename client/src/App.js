@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
 import Nav from './components/Nav'
+import ProtectedRoute from './components/ProtectedRoute'
 import About from './pages/About'
 import AddReview from './pages/AddReview'
+import AlbumReviews from './pages/AlbumReviews'
+import EditReview from './pages/EditReview'
+import Feed from './pages/Feed'
+import Home from './pages/Home'
+import Landing from './pages/Landing'
 import Login from './pages/Login'
+import Logout from './pages/Logout'
 import Reviews from './pages/Reviews'
 import Search from './pages/Search'
 import Signup from './pages/Signup'
 import UserProfile from './pages/UserProfile'
-import Feed from './pages/Feed'
 import { CheckSession } from './services/Auth'
-import AlbumReviews from './pages/AlbumReviews'
-import ProtectedRoute from './components/ProtectedRoute'
-import Logout from './pages/Logout'
-import EditReview from './pages/EditReview'
-import Landing from './pages/Landing'
-import MediaDetails from './components/MediaDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(
@@ -139,13 +138,6 @@ function App() {
             path="/editreview/:review_id"
             component={EditReview}
           />
-          {/* <ProtectedRoute
-            authenticated={authenticated}
-            user={user}
-            exact
-            path="/albumdetails/:album_id"
-            component={(props) => <MediaDetails {...props} />}
-          /> */}
         </Switch>
       </main>
     </div>

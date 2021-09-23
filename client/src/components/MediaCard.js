@@ -4,7 +4,6 @@ import './MediaCard.css'
 
 export default function MediaCard(props) {
   return (
-    // <div>
     <div className="media-card">
       <NavLink to={`/addreview/${props.id}`}>
         <div key={props.id} className="card">
@@ -14,6 +13,5 @@ export default function MediaCard(props) {
         </div>
       </NavLink>
     </div>
-    // </div>
   )
 }
