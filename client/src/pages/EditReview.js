@@ -24,7 +24,7 @@ export default function EditReview(props) {
       user_id: updatedReview.user.id,
       email: updatedReview.user.email
     }
-    const res = await EditUserReview(updatedReview.user.id, newUpdatedReview)
+    const res = await EditUserReview(updatedReview.id, newUpdatedReview)
     if (res.status === 200) {
       props.history.push('/')
     }
