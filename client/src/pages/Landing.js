@@ -13,7 +13,7 @@ export default function Landing() {
           <p>
             User generated reviews written by normal people, for normal people.
             Your one site stop to listen, rate, and write about the albums you
-            love (and trash the ones you don't).
+            love (and critique the ones you don't).
           </p>
           <Link to="/signup">
             <button>Sign up now.</button>
