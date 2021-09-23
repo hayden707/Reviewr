@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { FindAlbumById } from '../services/AlbumServices'
 import {
   GetAlbumAverageRating,
@@ -31,7 +32,10 @@ const AlbumReviews = (props) => {
         albumReviews.map((review) => (
           <div key={review.id}>
             <img src={review.album.image} alt={review.album.title} />
-            <h3>{review.rating}</h3>
+            <Link to={`/userprofile/${review.user.id}`}>
+              <h3>by {review.user.username}</h3>
+            </Link>
+            <h3>{parseFloat(review.rating).toFixed(1)}/10</h3>
             <h3>{review.content}</h3>
           </div>
         ))}
