@@ -132,13 +132,13 @@ function App() {
             path="/editreview/:review_id"
             component={EditReview}
           />
-          <ProtectedRoute
+          {/* <ProtectedRoute
             authenticated={authenticated}
             user={user}
             exact
             path="/albumdetails/:album_id"
             component={(props) => <MediaDetails {...props} />}
-          />
+          /> */}
         </Switch>
       </main>
     </div>

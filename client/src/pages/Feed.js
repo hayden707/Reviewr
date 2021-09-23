@@ -50,7 +50,9 @@ export default function Feed() {
                   </div>
                 </div>
                 <div className="review-text-container">
-                  <p>{review.content.substring(0, 80)}</p>
+                  <p className="review-content">
+                    {review.content.substring(0, 500)}{' '}
+                  </p>
                 </div>
               </div>
             </div>
