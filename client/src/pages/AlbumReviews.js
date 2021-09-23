@@ -26,7 +26,8 @@ const AlbumReviews = (props) => {
   return (
     <div className="AlbumReviews">
       <div className="album-info-container">
-        <h1>{albumDetails.average}/10</h1>
+        <h6>AVERAGE SCORE</h6>
+        <h1 className="avg-score">{albumDetails.average}/10</h1>
         <h2>{albumDetails.title}</h2>
         <h3>{albumDetails.artist}</h3>
         <img
@@ -35,7 +36,7 @@ const AlbumReviews = (props) => {
           class="album-cover"
         />
         <Link to={`/addreview/${albumDetails.deezer_id}`}>
-          <p>Review this Album</p>
+          <button>Review this Album</button>
         </Link>
       </div>
       <div className="album-reviews-container">
@@ -43,7 +44,9 @@ const AlbumReviews = (props) => {
           albumReviews.map((review) => (
             <div key={review.id} className="review-container">
               <div className="reviewer-info">
-                <h3>{parseFloat(review.rating).toFixed(1)}/10</h3>
+                <h3 className="user-score">
+                  {parseFloat(review.rating).toFixed(1)}/10
+                </h3>
                 <Link to={`/userprofile/${review.user.id}`}>
                   <h3>by {review.user.username}</h3>
                 </Link>
