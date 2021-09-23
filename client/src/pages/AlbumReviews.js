@@ -28,13 +28,22 @@ const AlbumReviews = (props) => {
       <div className="album-info-container">
         <h6>AVERAGE SCORE</h6>
         <h1 className="avg-score">{albumDetails.average}/10</h1>
-        <h2>{albumDetails.title}</h2>
-        <h3>{albumDetails.artist}</h3>
-        <img
-          src={albumDetails.image}
+        {/* <h2>{albumDetails.title}</h2> */}
+        {/* <h3>{albumDetails.artist}</h3> */}
+        {/* <img
+          // src={albumDetails.image}
           alt={albumDetails.title}
           class="album-cover"
-        />
+        /> */}
+        <iframe
+          title="deezer-widget"
+          src={`https://widget.deezer.com/widget/dark/album/${albumDetails.deezer_id}?tracklist=false`}
+          width="400"
+          height="400"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media; clipboard-write"
+        ></iframe>
         <Link to={`/addreview/${albumDetails.deezer_id}`}>
           <button>Review this Album</button>
         </Link>
