@@ -23,9 +23,9 @@ export default function Nav(props) {
           <NavLink className="navlink" to="/search">
             Search
           </NavLink>
-          <NavLink className="navlink" to="/albumreviews/">
+          {/* <NavLink className="navlink" to="/albumreviews/">
             Albums
-          </NavLink>
+          </NavLink> */}
           <NavLink
             className="navlink"
             to={`/` || `/userprofile/${props.user.id}`}
