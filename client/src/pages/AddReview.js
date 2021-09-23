@@ -1,15 +1,13 @@
-import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { DEEZER_BASE_URL } from '../globals'
+import ReviewSlider from '../components/ReviewSlider'
 import { AddUserReview } from '../services/ReviewsServices'
 import { AddAlbum, FindAlbumByDeezerId } from '../services/AlbumServices'
-import MediaCard from '../components/MediaCard'
 import { GetAlbumDetails } from '../services/DeezerServices'
 
 export default function AddReview(props) {
   const [albumDetails, setAlbumDetails] = useState(null)
   const [reviewContent, setReviewContent] = useState('')
-  const [rating, setRating] = useState(5)
+  const [rating, setRating] = useState(5.0)
 
   useEffect(async () => {
     // External API request for album details
@@ -62,11 +60,7 @@ export default function AddReview(props) {
 
       <div>
         <form onSubmit={handleSubmit}>
-          <input
-            type="number"
-            name="review-rating"
-            onChange={(e) => setRating(e.target.value)}
-          ></input>
+          <ReviewSlider setRating={setRating} />
           <input
             type="text"
             name="review-content"
