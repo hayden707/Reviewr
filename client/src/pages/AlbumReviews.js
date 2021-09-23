@@ -13,8 +13,12 @@ const AlbumReviews = (props) => {
     const reviews = await GetAlbumReviews(props.match.params.album_id)
     setAlbumReviews(reviews)
     const details = await FindAlbumById(props.match.params.album_id)
-    const average = await GetAlbumAverageRating(props.match.params.album_id)
-    setAlbumDetails({ ...details, average: average.data[0].average_rating })
+    const rawAverage = await GetAlbumAverageRating(props.match.params.album_id)
+    const formattedAverage = parseFloat(
+      rawAverage.data[0].average_rating
+    ).toFixed(1)
+
+    setAlbumDetails({ ...details, average: formattedAverage })
   }, [])
 
   return (
