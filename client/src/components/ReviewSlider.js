@@ -17,7 +17,6 @@ const handle = (props) => {
 
 const ReviewSlider = (props) => {
   const marks = {
-    '-10': '-10°C',
     0: '0.0',
     1: '1.0',
     2: '2.0',
@@ -51,6 +50,7 @@ const ReviewSlider = (props) => {
           border: 'solid 3px #231387',
           borderRadius: '0',
           height: '20px',
+          width: '2px',
           transform: 'translateY(6px)'
         }}
         activeDotStyle={{

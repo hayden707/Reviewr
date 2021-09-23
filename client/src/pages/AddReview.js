@@ -3,6 +3,7 @@ import ReviewSlider from '../components/ReviewSlider'
 import { AddUserReview } from '../services/ReviewsServices'
 import { AddAlbum, FindAlbumByDeezerId } from '../services/AlbumServices'
 import { GetAlbumDetails } from '../services/DeezerServices'
+import './AddReview.css'
 
 export default function AddReview(props) {
   const [albumDetails, setAlbumDetails] = useState(null)
@@ -45,30 +46,52 @@ export default function AddReview(props) {
   }
 
   return (
-    <div>
-      <h3>Write a Review</h3>
-
-      {albumDetails && (
-        <div>
-          <h3>
-            {albumDetails.title} ({albumDetails.release_date})
-          </h3>
-          <h4>{albumDetails.artist.name}</h4>
-          <img src={albumDetails.cover} />
+    <div className="AddReview">
+      <h2>Write a Review</h2>
+      <div className="add-review-container">
+        <div className="album-details-container">
+          {albumDetails && (
+            <div>
+              <iframe
+                title="deezer-widget"
+                src={`https://widget.deezer.com/widget/dark/album/${albumDetails.id}?tracklist=false`}
+                width="350"
+                height="350"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media; clipboard-write"
+              ></iframe>
+            </div>
+          )}
         </div>
-      )}
-
-      <div>
-        <form onSubmit={handleSubmit}>
-          <ReviewSlider setRating={setRating} />
-          <input
-            type="text"
-            name="review-content"
-            maxLength="5000"
-            onChange={(e) => setReviewContent(e.target.value)}
-          ></input>
-          <button>Submit review</button>
-        </form>
+        <div className="album-review-form-container">
+          <div className="review-form-header">
+            <h2>
+              Your Rating:{' '}
+              <span className="review-user-score">
+                {parseFloat(rating).toFixed(1)}/10
+              </span>
+            </h2>
+            <h4>
+              by{' '}
+              {props.authenticated && props.user ? props.user.username : 'you'}
+            </h4>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <ReviewSlider setRating={setRating} />
+            <textarea
+              name="review-content"
+              maxLength="255"
+              rows="10"
+              placeholder="How's this album?"
+              onChange={(e) => setReviewContent(e.target.value)}
+            ></textarea>
+            <div className="review-form-footer">
+              <p>{reviewContent.length}/255</p>
+              <button>Submit review</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

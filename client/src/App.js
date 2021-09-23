@@ -94,7 +94,9 @@ function App() {
             authenticated={authenticated}
             user={user}
             path="/addreview/:album_id"
-            component={(props) => <AddReview {...props} user={user} />}
+            component={(props) => (
+              <AddReview {...props} user={user} authenticated={authenticated} />
+            )}
           />
           <ProtectedRoute
             authenticated={authenticated}
