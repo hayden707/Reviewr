@@ -7,15 +7,9 @@ a {
 
 .grid-layout {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 200px;
   grid-template-columns: 1fr 2fr;
   padding-right: 120px;
-}
-
-.text-container {
-  background-color: #180c6a;
-  height: 200px;
-  grid-row-end: 2;
 }
 
 .rating-user-bar {
@@ -35,16 +29,35 @@ a {
   grid-row-end: 2;
 }
 
-.review-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0px;
-}
-
 #album-title {
   font-size: 24px;
 }
 
 #artist-name {
   font-size: 14px;
+}
+
+.title-info-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.album-image-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.review-text-container {
+  background-color: #180c6a;
+  height: 200px;
+}
+
+.review-header-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
 }
