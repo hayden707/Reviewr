@@ -42,8 +42,6 @@ a {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  margin: 1;
-  padding: 0;
 }
 
 .album-image-container {
@@ -54,6 +52,7 @@ a {
 }
 
 .review-text-container {
+  display: inline-grid;
   background-color: #180c6a;
   height: 200px;
   justify-items: center;
