@@ -57,7 +57,7 @@ export const AddUserReview = async (data) => {
 export const EditUserReview = async (id, data) => {
   try {
     const res = await Client.put(`/reviews/${id}`, data)
-    return res.data
+    return res
   } catch (error) {
     throw error
   }

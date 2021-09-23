@@ -10,7 +10,7 @@ const GetReviews = async (req, res) => {
           model: User,
           as: 'user',
           attributes: {
-            exclude: ['email', 'password_digest']
+            exclude: ['password_digest']
           }
         }
       ]
@@ -52,7 +52,7 @@ const GetReviewById = async (req, res) => {
           model: User,
           as: 'user',
           attributes: {
-            exclude: ['email', 'password_digest']
+            exclude: ['password_digest']
           }
         }
       ]
@@ -73,7 +73,7 @@ const GetAllReviewsOneAlbum = async (req, res) => {
           model: User,
           as: 'user',
           attributes: {
-            exclude: ['email', 'password_digest']
+            exclude: ['password_digest']
           }
         }
       ],
@@ -94,7 +94,7 @@ const GetAllReviewsOneUser = async (req, res) => {
           model: User,
           as: 'user',
           attributes: {
-            exclude: ['email', 'password_digest']
+            exclude: ['password_digest']
           },
           where: { id: id }
         },
@@ -140,7 +140,7 @@ const UpdateReview = async (req, res) => {
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
-    throw error
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
 }
 
