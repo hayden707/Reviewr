@@ -45,7 +45,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav handleLogOut={handleLogOut} />
+      <Nav
+        handleLogOut={handleLogOut}
+        authenticated={authenticated}
+        user={user}
+      />
       <main>
         <Switch>
           <Route exact path="/signup" component={Signup} />
