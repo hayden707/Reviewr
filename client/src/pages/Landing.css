@@ -1,0 +1,25 @@
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.landing-image {
+  max-height: 700px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+/* 
+.landing-text-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+} */
+
+.landing-text-flex {
+  padding-top: 120px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
