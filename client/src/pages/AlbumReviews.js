@@ -32,7 +32,11 @@ const AlbumReviews = (props) => {
       {albumReviews &&
         albumReviews.map((review) => (
           <div key={review.id}>
-            <img src={review.album.image} alt={review.album.title} />
+            <img
+              src={review.album.image}
+              alt={review.album.title}
+              class="album-cover"
+            />
             <Link to={`/userprofile/${review.user.id}`}>
               <h3>by {review.user.username}</h3>
             </Link>
