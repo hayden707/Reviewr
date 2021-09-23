@@ -4,6 +4,13 @@ import './Nav.css'
 import musicnote from '../images/musicnote.png'
 
 export default function Nav(props) {
+  const profileLink = () => {
+    if (props.authenticated && props.user) {
+      return `/userprofile/${props.user.id}`
+    }
+    return '/'
+  }
+
   return (
     <div className="Nav">
       {props.authenticated ? (
@@ -23,10 +30,9 @@ export default function Nav(props) {
           <NavLink className="navlink" to="/search">
             Search
           </NavLink>
-          <NavLink
-            className="navlink"
-            to={props.user.id ? `/userprofile/${props.user.id}` : '/'}
-          >
+
+          <NavLink className="navlink" to={profileLink}>
+
             Profile
           </NavLink>
           <button onClick={props.handleLogOut}>Logout</button>
