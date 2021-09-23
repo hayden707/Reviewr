@@ -28,7 +28,7 @@ export default function Nav(props) {
           </NavLink> */}
           <NavLink
             className="navlink"
-            to={`/` || `/userprofile/${props.user.id}`}
+            to={props.user.id ? `/userprofile/${props.user.id}` : '/'}
           >
             Profile
           </NavLink>
