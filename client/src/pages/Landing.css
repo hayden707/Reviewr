@@ -8,11 +8,11 @@
   grid-column-start: 1;
   grid-column-end: 2;
 }
-/* 
+
 .landing-text-container {
   grid-column-start: 2;
   grid-column-end: 3;
-} */
+}
 
 .landing-text-flex {
   padding-top: 120px;
