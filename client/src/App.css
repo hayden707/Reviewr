@@ -10,3 +10,7 @@ button {
   background-color: black;
   color: #ffea00;
 }
+.album-cover {
+  height: 200px;
+  width: 200px;
+}
