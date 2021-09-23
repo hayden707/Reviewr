@@ -5,6 +5,7 @@ import {
   GetAlbumAverageRating,
   GetAlbumReviews
 } from '../services/ReviewsServices'
+import './AlbumReview.css'
 
 const AlbumReviews = (props) => {
   const [albumReviews, setAlbumReviews] = useState([])
@@ -26,7 +27,7 @@ const AlbumReviews = (props) => {
     <div>
       <h1>Score: {albumDetails.average}/10</h1>
       <h1>
-        All album reviews for {albumDetails.title} by {albumDetails.artist}
+        User Reviews for {albumDetails.title} by {albumDetails.artist}
       </h1>
       {albumReviews &&
         albumReviews.map((review) => (
@@ -36,7 +37,7 @@ const AlbumReviews = (props) => {
               <h3>by {review.user.username}</h3>
             </Link>
             <h3>{parseFloat(review.rating).toFixed(1)}/10</h3>
-            <h3>{review.content}</h3>
+            <h3 id="content">{review.content}</h3>
           </div>
         ))}
     </div>
