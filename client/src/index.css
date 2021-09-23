@@ -10,3 +10,7 @@ body {
 img {
   border-radius: 10px;
 }
+
+input {
+  font-family: 'Jost', sans-serif;
+}

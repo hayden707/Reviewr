@@ -1,0 +1,39 @@
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-image-container {
+  max-height: 700px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+h2 {
+  color: #ffea00;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 3px solid white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 10px;
+}
