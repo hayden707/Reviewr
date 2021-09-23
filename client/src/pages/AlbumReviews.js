@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { FindAlbumById } from '../services/AlbumServices'
-import { GetAlbumDetails } from '../services/DeezerServices'
-import { GetAlbumReviews } from '../services/ReviewsServices'
+import {
+  GetAlbumAverageRating,
+  GetAlbumReviews
+} from '../services/ReviewsServices'
 
 const AlbumReviews = (props) => {
   const [albumReviews, setAlbumReviews] = useState([])
@@ -11,11 +13,13 @@ const AlbumReviews = (props) => {
     const reviews = await GetAlbumReviews(props.match.params.album_id)
     setAlbumReviews(reviews)
     const details = await FindAlbumById(props.match.params.album_id)
-    setAlbumDetails(details)
+    const average = await GetAlbumAverageRating(props.match.params.album_id)
+    setAlbumDetails({ ...details, average: average.data[0].average_rating })
   }, [])
 
   return (
     <div>
+      <h1>Score: {albumDetails.average}/10</h1>
       <h1>
         All album reviews for {albumDetails.title} by {albumDetails.artist}
       </h1>
