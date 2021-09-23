@@ -21,12 +21,13 @@ export default function Feed() {
           <div>
             <div className="card" key={review.id}>
               <div>
-                <h3>{review.album.title}</h3>
-                <h3>{review.album.artist}</h3>
+                <h3 className="left">{review.album.title}</h3>
+                <h3 className="left">{review.album.artist}</h3>
                 <Link to={`/albumreviews/${review.album.id}`}>
                   <img
                     src={review.album.image}
                     className="album-image"
+                    className="left"
                     alt="review"
                   />
                 </Link>
