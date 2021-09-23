@@ -23,9 +23,6 @@ export default function Nav(props) {
           <NavLink className="navlink" to="/search">
             Search
           </NavLink>
-          {/* <NavLink className="navlink" to="/albumreviews/">
-            Albums
-          </NavLink> */}
           <NavLink
             className="navlink"
             to={props.user.id ? `/userprofile/${props.user.id}` : '/'}
