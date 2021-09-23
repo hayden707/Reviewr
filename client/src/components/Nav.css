@@ -28,3 +28,15 @@ nav.navbar > a:hover {
   text-decoration: underline;
   text-decoration-thickness: 3px;
 }
+
+.user-score,
+.avg-score {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffea00;
+  text-shadow: 0px 0px 8px #ffea009d;
+}
+
+.avg-score {
+  font-size: 52px;
+}

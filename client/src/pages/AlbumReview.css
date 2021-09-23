@@ -19,13 +19,14 @@ div.AlbumReviews {
 }
 
 div.album-info-container {
-  height: 100vh;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  align-self: start;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 35%;
-  margin-top: 20px;
+  margin-right: 5%;
+  padding-top: 80px;
 }
 
 div.album-info-container > * {
@@ -35,13 +36,19 @@ div.album-info-container > * {
 
 div.album-info-container > h1,
 div.album-info-container > h2,
-div.album-info-container > h3 {
+div.album-info-container > h3,
+div.album-info-container > h6 {
   max-width: 100%;
+}
+
+div.album-info-container > h6 {
+  margin-bottom: -10px;
 }
 
 div.album-reviews-container {
   width: 40%;
-  margin-left: 30%;
+  margin-top: 80px;
+  margin-left: 5%;
 }
 
 div.reviews-container {
@@ -53,9 +60,16 @@ div.reviewer-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+div.reviewer-info > *,
+div.reviewer-info > a > h3 {
+  margin: 0;
 }
 
 div.review-content {
   background-color: #180c6a;
   min-height: 200px;
+  margin-bottom: 70px;
 }
