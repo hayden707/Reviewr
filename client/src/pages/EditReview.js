@@ -4,15 +4,15 @@ import { useEffect } from 'react'
 import { EditUserReview } from '../services/ReviewsServices'
 
 export default function EditReview(props) {
-  const [updatedReview, setUpdatedReview] = useState()
+  const [updatedReview, setUpdatedReview] = useState(null)
   const [rating, setRating] = useState(0)
   const [content, setContent] = useState('')
 
   useEffect(async () => {
     const review = await GetReviewById(props.match.params.review_id)
-    setUpdatedReview(review.data)
-    setRating(review.data.rating)
-    setContent(review.data.content)
+    setUpdatedReview(review.data[0])
+    setRating(review.data[0].rating)
+    setContent(review.data[0].content)
   }, [])
 
   const handleSubmit = async (e) => {

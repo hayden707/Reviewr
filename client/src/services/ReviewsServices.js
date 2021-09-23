@@ -9,6 +9,15 @@ export const GetAllAlbumReviews = async () => {
   }
 }
 
+export const GetAlbumAverageRating = async (id) => {
+  try {
+    const res = await Client.get(`/reviews/average/${id}`)
+    return res
+  } catch (error) {
+    throw error
+  }
+}
+
 export const GetReviewById = async (id) => {
   try {
     const res = await Client.get(`/reviews/${id}`)
