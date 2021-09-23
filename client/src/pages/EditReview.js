@@ -28,7 +28,7 @@ export default function EditReview(props) {
     if (res.status === 200) {
       props.history.push('/')
     }
-    console.log(newUpdatedReview)
+    console.log(res)
   }
 
   return (
