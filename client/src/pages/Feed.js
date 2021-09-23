@@ -31,7 +31,7 @@ export default function Feed() {
                   <Link to={`/albumreviews/${review.album.id}`}>
                     <img
                       src={review.album.image}
-                      className="album-image"
+                      id="feed-album-image"
                       className="left"
                       alt="review"
                     />
@@ -50,7 +50,6 @@ export default function Feed() {
                     <p>{review.content.substring(0, 80)}</p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

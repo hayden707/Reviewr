@@ -1,9 +1,8 @@
 a {
   color: white;
 }
-img :not(#app-logo) {
-  height: 200px;
-  width: 200px;
+#feed-album-image {
+  max-height: 200px;
 }
 
 .grid-layout {
@@ -39,6 +38,7 @@ img :not(#app-logo) {
 .review-container {
   display: flex;
   flex-direction: column;
+  margin-top: 0px;
 }
 
 #album-title {
