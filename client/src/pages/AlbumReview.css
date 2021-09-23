@@ -56,6 +56,11 @@ div.reviews-container {
   flex-direction: column;
 }
 
+div.review-content > p {
+  text-align: left;
+  padding: 0 20px;
+}
+
 div.reviewer-info {
   display: flex;
   flex-direction: row;
