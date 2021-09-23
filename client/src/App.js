@@ -54,7 +54,6 @@ function App() {
       />
       <main>
         <Switch>
-          <Route exact path="/" component={Landing} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/about" component={About} />
           <Route
@@ -79,13 +78,19 @@ function App() {
               />
             )}
           />
-          <ProtectedRoute
-            authenticated={authenticated}
-            user={user}
-            exact
-            path="/"
-            component={() => <Home user={user} authenticated={authenticated} />}
-          />
+          {authenticated && user ? (
+            <ProtectedRoute
+              authenticated={authenticated}
+              user={user}
+              exact
+              path="/"
+              component={() => (
+                <Home user={user} authenticated={authenticated} />
+              )}
+            />
+          ) : (
+            <Route exact path="/" component={Landing} />
+          )}
           <ProtectedRoute
             authenticated={authenticated}
             user={user}

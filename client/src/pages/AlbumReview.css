@@ -51,7 +51,7 @@ div.album-reviews-container {
   margin-left: 5%;
 }
 
-div.reviews-container {
+div.review-container {
   display: flex;
   flex-direction: column;
 }
