@@ -16,6 +16,7 @@ import AlbumReviews from './pages/AlbumReviews'
 import ProtectedRoute from './components/ProtectedRoute'
 import Logout from './pages/Logout'
 import EditReview from './pages/EditReview'
+import Landing from './pages/Landing'
 import MediaDetails from './components/MediaDetails'
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
       />
       <main>
         <Switch>
+          <Route exact path="/" component={Landing} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/about" component={About} />
           <Route
