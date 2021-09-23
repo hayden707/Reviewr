@@ -10,7 +10,7 @@ export default function MediaCard(props) {
         <div key={props.id} className="card">
           <h3>{props.title}</h3>
           <p>{props.artist.name}</p>
-          <img src={props.cover_medium} alt="album cover" />
+          <img src={props.cover} alt="album cover" />
         </div>
       </NavLink>
     </div>
