@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './MediaCard.css'
 
 export default function MediaCard(props) {
   return (
