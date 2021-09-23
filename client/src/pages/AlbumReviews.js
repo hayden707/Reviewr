@@ -24,26 +24,36 @@ const AlbumReviews = (props) => {
   }, [])
 
   return (
-    <div>
-      <h1>Score: {albumDetails.average}/10</h1>
-      <h1>
-        User Reviews for {albumDetails.title} by {albumDetails.artist}
-      </h1>
-      {albumReviews &&
-        albumReviews.map((review) => (
-          <div key={review.id}>
-            <img
-              src={review.album.image}
-              alt={review.album.title}
-              class="album-cover"
-            />
-            <Link to={`/userprofile/${review.user.id}`}>
-              <h3>by {review.user.username}</h3>
-            </Link>
-            <h3>{parseFloat(review.rating).toFixed(1)}/10</h3>
-            <h3 id="content">{review.content}</h3>
-          </div>
-        ))}
+    <div className="AlbumReviews">
+      <div className="album-info-container">
+        <h1>{albumDetails.average}/10</h1>
+        <h2>{albumDetails.title}</h2>
+        <h3>{albumDetails.artist}</h3>
+        <img
+          src={albumDetails.image}
+          alt={albumDetails.title}
+          class="album-cover"
+        />
+        <Link to={`/addreview/${albumDetails.deezer_id}`}>
+          <p>Review this Album</p>
+        </Link>
+      </div>
+      <div className="album-reviews-container">
+        {albumReviews &&
+          albumReviews.map((review) => (
+            <div key={review.id} className="review-container">
+              <div className="reviewer-info">
+                <h3>{parseFloat(review.rating).toFixed(1)}/10</h3>
+                <Link to={`/userprofile/${review.user.id}`}>
+                  <h3>by {review.user.username}</h3>
+                </Link>
+              </div>
+              <div className="review-content">
+                <p>{review.content}</p>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   )
 }

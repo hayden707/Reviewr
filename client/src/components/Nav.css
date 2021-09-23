@@ -4,6 +4,7 @@ div.Nav {
   top: 0;
   background-color: #3316f2;
   color: #ffffff;
+  z-index: 2;
 }
 
 nav.navbar {
