@@ -30,7 +30,7 @@ We will also implement an authorization system so that only registered users wil
 
 ### **_Screenshots_**
 
-![image](https://user-images.githubusercontent.com/38524171/133909859-c350fdf4-5d0f-4ba9-a657-e4cba1cb3b59.png)
+![image](https://i.ibb.co/7W641DL/Screen-Shot-2021-09-23-at-4-25-14-PM.png)
 
 ![image](https://user-images.githubusercontent.com/38524171/133909865-8a181d3c-64ef-4c66-b193-d709f0428b63.png)
 
@@ -44,4 +44,5 @@ We will also implement an authorization system so that only registered users wil
 
 ### **_Credits_**
 
-- Music Logo from PNGEgg
+- Music Logo from PNGEgg https://www.pngegg.com/en/png-fbbov
+- Deezer API https://developers.deezer.com/
