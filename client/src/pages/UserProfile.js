@@ -51,7 +51,7 @@ export default function UserProfile(props) {
                 <h3>by {review.user.username}</h3>
               </div>
               <p>{review.rating}</p>
-              <p>{review.content.substring(0, 80)}</p>
+              <p>{review.content.substring(0, 255)}</p>
               {sameUserReviews && (
                 <div>
                   <Link to={`/editreview/${review.id}`}>

@@ -86,8 +86,10 @@ export default function AddReview(props) {
               placeholder="How's this album?"
               onChange={(e) => setReviewContent(e.target.value)}
             ></textarea>
-            <p>{reviewContent.length}/255</p>
-            <button>Submit review</button>
+            <div className="review-form-footer">
+              <p>{reviewContent.length}/255</p>
+              <button>Submit review</button>
+            </div>
           </form>
         </div>
       </div>
