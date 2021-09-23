@@ -1,0 +1,9 @@
+.rc-slider-mark-text {
+  color: #ffffff91;
+  font-weight: 600;
+}
+
+.rc-slider-mark-text-active {
+  color: #ffea00;
+  font-weight: 600;
+}
