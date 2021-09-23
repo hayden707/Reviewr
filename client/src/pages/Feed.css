@@ -42,6 +42,8 @@ a {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+  margin: 1;
+  padding: 0;
 }
 
 .album-image-container {
@@ -54,10 +56,18 @@ a {
 .review-text-container {
   background-color: #180c6a;
   height: 200px;
+  justify-items: center;
 }
 
 .review-header-container {
   display: flex;
   flex-direction: column;
   margin-top: 0px;
+}
+.review-content {
+  overflow: hidden;
+  max-width: 300px;
+  text-overflow: elipsis;
+  text-align: center;
+  justify-items: center;
 }
