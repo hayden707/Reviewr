@@ -56,6 +56,10 @@ div.review-form-header > h4 {
   font-weight: 400;
 }
 
+div.review-form-header > h2 {
+  font-weight: 400;
+}
+
 div.review-form-footer {
   display: flex;
   flex-direction: row;

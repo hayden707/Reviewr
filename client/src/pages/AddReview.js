@@ -47,7 +47,7 @@ export default function AddReview(props) {
 
   return (
     <div className="AddReview">
-      <h2>Write a Review</h2>
+      <h2 className="write-review">Write a Review</h2>
       <div className="add-review-container">
         <div className="album-details-container">
           {albumDetails && (
@@ -67,7 +67,7 @@ export default function AddReview(props) {
         <div className="album-review-form-container">
           <div className="review-form-header">
             <h2>
-              Your Rating:{' '}
+              Your Rating:
               <span className="review-user-score">
                 {parseFloat(rating).toFixed(1)}/10
               </span>
