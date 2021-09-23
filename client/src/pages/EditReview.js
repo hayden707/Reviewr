@@ -52,7 +52,7 @@ export default function EditReview(props) {
             <input
               type="text"
               name="updated-content"
-              maxLength="500"
+              maxLength="255"
               value={content}
               onChange={(e) => setContent(e.target.value)}
             ></input>

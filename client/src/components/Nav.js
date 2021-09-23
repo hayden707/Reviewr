@@ -13,7 +13,7 @@ export default function Nav(props) {
 
   return (
     <div className="Nav">
-      {props.authenticated ? (
+      {props.authenticated && props.user ? (
         <nav className="navbar">
           <p>
             <NavLink className="navlink" to="/">
@@ -32,7 +32,7 @@ export default function Nav(props) {
           </NavLink>
 
           <NavLink className="navlink" to={profileLink}>
-            Profile
+            {props.user.username}'s Profile
           </NavLink>
           <button onClick={props.handleLogOut}>Logout</button>
         </nav>
