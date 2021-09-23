@@ -1,8 +1,9 @@
 a {
   color: white;
 }
-img {
-  max-height: 200px;
+img :not(#app-logo) {
+  height: 200px;
+  width: 200px;
 }
 
 .grid-layout {

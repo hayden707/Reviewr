@@ -50,6 +50,7 @@ export default function Feed() {
                     <p>{review.content.substring(0, 80)}</p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

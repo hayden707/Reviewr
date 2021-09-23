@@ -4,3 +4,7 @@ h1 {
 #content {
   color: white;
 }
+img :not(#music-logo) {
+  height: 200px;
+  width: 200px;
+}
