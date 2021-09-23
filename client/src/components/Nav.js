@@ -26,7 +26,10 @@ export default function Nav(props) {
           <NavLink className="navlink" to="/albumreviews/">
             Albums
           </NavLink>
-          <NavLink className="navlink" to={`/userprofile/${props.user.id}`}>
+          <NavLink
+            className="navlink"
+            to={`/` || `/userprofile/${props.user.id}`}
+          >
             Profile
           </NavLink>
           <button onClick={props.handleLogOut}>Logout</button>
