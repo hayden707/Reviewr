@@ -1,7 +1,50 @@
 a {
   color: white;
 }
-img :not(#app-logo) {
+#feed-album-image {
+  max-height: 200px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  padding-right: 120px;
+}
+
+.text-container {
+  background-color: #180c6a;
   height: 200px;
-  width: 200px;
+  grid-row-end: 2;
+}
+
+.rating-user-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.score {
+  color: #ffea00;
+  font-size: 36px;
+  font-weight: bold;
+}
+.album-container {
+  display: flex;
+  flex-direction: column;
+  grid-row-end: 2;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+}
+
+#album-title {
+  font-size: 24px;
+}
+
+#artist-name {
+  font-size: 14px;
 }
