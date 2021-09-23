@@ -23,11 +23,13 @@ export default function Feed() {
               <div>
                 <h3>{review.album.title}</h3>
                 <h3>{review.album.artist}</h3>
-                <img
-                  src={review.album.image}
-                  className="album-image"
-                  alt="review"
-                />
+                <Link to={`/albumreviews/${review.album.id}`}>
+                  <img
+                    src={review.album.image}
+                    className="album-image"
+                    alt="review"
+                  />
+                </Link>
                 <Link to={`/userprofile/${review.user.id}`}>
                   <h3>by {review.user.username}</h3>
                 </Link>
