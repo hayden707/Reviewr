@@ -67,7 +67,7 @@ export default function AddReview(props) {
             </h4>
           </div>
           <form onSubmit={handleSubmit}>
-            <ReviewSlider setRating={setRating} />
+            <ReviewSlider setRating={setRating} rating={rating} />
             <textarea
               name="review-content"
               maxLength="255"

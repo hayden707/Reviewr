@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import DeezerWidget from '../components/DeezerWidget'
 import Loading from '../components/Loading'
 import ReviewSlider from '../components/ReviewSlider'
 import { GetReviewById } from '../services/ReviewsServices'
 import { EditUserReview } from '../services/ReviewsServices'
+import './EditReview.css'
 
 export default function EditReview(props) {
   const [updatedReview, setUpdatedReview] = useState(null)
-  const [rating, setRating] = useState(0)
+  const [rating, setRating] = useState(5.0)
   const [content, setContent] = useState('')
 
   useEffect(async () => {
@@ -36,19 +38,11 @@ export default function EditReview(props) {
     <div className="EditReview">
       <h2 className="write-review">Edit Your Review</h2>
       {updatedReview ? (
-        <div>
+        <div className="edit-review-container">
           <div className="album-details-container">
             <h3>{updatedReview.album.artist}</h3>
             <h3>{updatedReview.album.title}</h3>
-            <iframe
-              title="deezer-widget"
-              src={`https://widget.deezer.com/widget/dark/album/${updatedReview.album.deezer_id}?tracklist=false`}
-              width="350"
-              height="350"
-              frameBorder="0"
-              allowtransparency="true"
-              allow="encrypted-media; clipboard-write"
-            ></iframe>
+            <DeezerWidget albumId={updatedReview.album.deezer_id} />
           </div>
           <div className="album-review-form-container">
             <div className="review-form-header">
@@ -66,7 +60,7 @@ export default function EditReview(props) {
               </h4>
             </div>
             <form onSubmit={handleSubmit}>
-              <ReviewSlider setRating={setRating} />
+              <ReviewSlider setRating={setRating} rating={rating} />
               <textarea
                 name="review-content"
                 maxLength="255"
