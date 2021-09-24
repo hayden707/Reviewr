@@ -4,9 +4,13 @@
 }
 
 .login-image-container {
-  max-height: 700px;
   grid-column-start: 1;
   grid-column-end: 2;
+}
+
+.signup-image {
+  max-height: 100vh;
+  border-radius: 0;
 }
 
 h2 {
