@@ -17,7 +17,7 @@ const GetReviews = async (req, res) => {
     })
     res.send(reviews)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -34,7 +34,7 @@ const GetAverageReviews = async (req, res) => {
     })
     res.send(average)
   } catch (error) {
-    res.status(400).send({ error: error })
+    res.status(500).send({ error: error })
   }
 }
 
@@ -59,7 +59,7 @@ const GetReviewById = async (req, res) => {
     })
     res.send(review)
   } catch (error) {
-    res.status(400).send({ error: error })
+    res.status(500).send({ error: error })
   }
 }
 
@@ -84,7 +84,7 @@ const GetReviewByDeezerId = async (req, res) => {
     })
     res.send(review)
   } catch (error) {
-    res.status(400).send({ error: error })
+    res.status(500).send({ error: error })
   }
 }
 
@@ -106,7 +106,7 @@ const GetAllReviewsOneAlbum = async (req, res) => {
     })
     res.send(review)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -128,7 +128,7 @@ const GetAllReviewsOneUser = async (req, res) => {
     })
     res.send(review)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -145,7 +145,7 @@ const CreateReview = async (req, res) => {
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -178,7 +178,7 @@ const DeleteReview = async (req, res) => {
       status: 'Ok'
     })
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 

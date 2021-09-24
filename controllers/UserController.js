@@ -5,7 +5,7 @@ const CreateUser = async (req, res) => {
     const user = await User.create({ ...req.body })
     res.send(user)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -28,7 +28,7 @@ const GetUserById = async (req, res) => {
     const user = await User.findByPk(id)
     res.send(user)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -40,7 +40,7 @@ const UpdateUser = async (req, res) => {
     )
     res.send(user)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -49,7 +49,7 @@ const DeleteUser = async (req, res) => {
     await User.destroy({ where: { id: req.params.user_id } })
     res.send({ msg: 'User deleted', payload: req.params.user_id, status: 'Ok' })
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 

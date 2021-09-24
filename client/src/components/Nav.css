@@ -5,6 +5,7 @@ div.Nav {
   background-color: #3316f2;
   color: #ffffff;
   z-index: 2;
+  box-shadow: 0px 3px 10px #12111d;
 }
 
 nav.navbar {
@@ -57,4 +58,11 @@ a.main-link :hover {
 
 #logout-button {
   all: unset;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #ffffff;
 }

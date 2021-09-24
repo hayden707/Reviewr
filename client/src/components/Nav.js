@@ -38,12 +38,10 @@ export default function Nav(props) {
         </nav>
       ) : (
         <nav className="navbar">
-          <p>
-            <NavLink className="navlink" to="/">
-              <MusicNote />
-            </NavLink>
-            Reviewr
-          </p>
+          <NavLink className="navlink main-link" to="/">
+            <MusicNote />
+            <h2 className="Reviewr">Reviewr</h2>
+          </NavLink>
           <NavLink className="navlink" to="/">
             Home
           </NavLink>
