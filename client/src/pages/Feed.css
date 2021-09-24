@@ -12,6 +12,9 @@ a {
   padding-right: 120px;
 }
 
+.album-title {
+}
+
 .rating-user-bar {
   display: flex;
   flex-direction: row;
@@ -63,6 +66,11 @@ a {
   flex-direction: column;
   margin-top: 0px;
 }
+
+.username {
+  margin-top: 60px;
+}
+
 .review-content {
   overflow: hidden;
   max-width: 300px;
