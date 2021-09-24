@@ -25,6 +25,10 @@
   grid-row-end: 2;
 }
 
+.title-info-container > h3 {
+  margin: 0;
+}
+
 .review-text-container {
   display: inline-grid;
   background-color: #180c6a;
@@ -40,13 +44,13 @@
   justify-self: flex-start;
 }
 
-#album-title {
+.album-title {
   font-size: 24px;
   text-align: right;
 }
 
-#artist-name {
-  font-size: 20px;
+.artist-name {
+  font-size: 16px;
   text-align: right;
 }
 
@@ -60,7 +64,35 @@
 }
 
 .rating-user-bar > * {
+  margin-left: 30px;
   margin-top: 60px;
   margin-bottom: 10px;
   align-self: flex-end;
+}
+
+button.edit-button,
+button.delete-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 80px;
+}
+
+button.delete-button {
+  margin-left: 10px;
+}
+
+div.post-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.post-buttons > div > a {
+  text-decoration: none;
+}
+
+div.post-buttons-container {
+  display: flex;
+  flex-direction: row;
 }

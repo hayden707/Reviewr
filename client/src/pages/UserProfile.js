@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 import { Link } from 'react-router-dom'
 import './UserProfile.css'
+import EditIcon from '../components/EditIcon'
+import DeleteIcon from '../components/DeleteIcon'
 
 export default function UserProfile(props) {
   const [userReviews, setUserReviews] = useState([])
@@ -39,8 +41,8 @@ export default function UserProfile(props) {
             <div>
               <div className="grid-layout">
                 <div className="title-info-container">
-                  <h3 id="album-title">{review.album.title}</h3>
-                  <h3 id="artist-name">{review.album.artist}</h3>
+                  <h3 className="album-title">{review.album.title}</h3>
+                  <h3 className="artist-name">{review.album.artist}</h3>
                 </div>
                 <div className="album-image-container">
                   <Link to={`/albumreviews/${review.album.deezer_id}`}>
@@ -53,7 +55,9 @@ export default function UserProfile(props) {
                 </div>
                 <div className="user-header-container">
                   <div className="rating-user-bar">
-                    <p className="score">{review.rating}/10</p>
+                    <p className="score">
+                      {parseFloat(review.rating).toFixed(1)}/10
+                    </p>
                     <h3 className="username">by {review.user.username}</h3>
                   </div>
                 </div>
@@ -62,18 +66,22 @@ export default function UserProfile(props) {
                     {review.content.substring(0, 255)}
                   </p>
                 </div>
-                <div className="edit-buttons" id="buttons">
+                <div className="post-buttons">
                   {sameUserReviews && (
-                    <div>
+                    <div className="post-buttons-container">
                       <Link to={`/editreview/${review.id}`}>
-                        <button>Edit review</button>
+                        <button className="edit-button">
+                          <EditIcon />
+                          Edit
+                        </button>
                       </Link>
                       <button
+                        className="delete-button"
                         onClick={() => {
                           deleteReview(review.id)
                         }}
                       >
-                        Delete review
+                        <DeleteIcon /> Delete
                       </button>
                     </div>
                   )}
