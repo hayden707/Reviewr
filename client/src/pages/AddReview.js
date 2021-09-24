@@ -4,6 +4,7 @@ import { AddUserReview } from '../services/ReviewsServices'
 import { AddAlbum, FindAlbumByDeezerId } from '../services/AlbumServices'
 import { GetDeezerAlbumDetails } from '../services/DeezerServices'
 import './AddReview.css'
+import DeezerWidget from '../components/DeezerWidget'
 
 export default function AddReview(props) {
   const [albumDetails, setAlbumDetails] = useState(null)
@@ -50,19 +51,7 @@ export default function AddReview(props) {
       <h2 className="write-review">Write a Review</h2>
       <div className="add-review-container">
         <div className="album-details-container">
-          {albumDetails && (
-            <div>
-              <iframe
-                title="deezer-widget"
-                src={`https://widget.deezer.com/widget/dark/album/${albumDetails.id}?tracklist=false`}
-                width="350"
-                height="350"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media; clipboard-write"
-              ></iframe>
-            </div>
-          )}
+          {albumDetails && <DeezerWidget albumId={albumDetails.id} />}
         </div>
         <div className="album-review-form-container">
           <div className="review-form-header">
@@ -78,7 +67,7 @@ export default function AddReview(props) {
             </h4>
           </div>
           <form onSubmit={handleSubmit}>
-            <ReviewSlider setRating={setRating} />
+            <ReviewSlider setRating={setRating} rating={rating} />
             <textarea
               name="review-content"
               maxLength="255"

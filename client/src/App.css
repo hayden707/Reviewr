@@ -14,3 +14,46 @@ button {
   height: 200px;
   width: 200px;
 }
+
+.LazyLoad {
+  background: linear-gradient(217deg, #12111d, #180c6a);
+  background-size: 400% 400%;
+
+  -webkit-animation: LazyLoad 0.8s ease infinite;
+  -moz-animation: LazyLoad 0.8s ease infinite;
+  animation: LazyLoad 0.8s ease infinite;
+}
+
+@-webkit-keyframes LazyLoad {
+  0% {
+    background-position: 0% 97%;
+  }
+  50% {
+    background-position: 100% 4%;
+  }
+  100% {
+    background-position: 0% 97%;
+  }
+}
+@-moz-keyframes LazyLoad {
+  0% {
+    background-position: 0% 97%;
+  }
+  50% {
+    background-position: 100% 4%;
+  }
+  100% {
+    background-position: 0% 97%;
+  }
+}
+@keyframes LazyLoad {
+  0% {
+    background-position: 0% 97%;
+  }
+  50% {
+    background-position: 100% 4%;
+  }
+  100% {
+    background-position: 0% 97%;
+  }
+}
