@@ -15,10 +15,6 @@ nav.navbar {
   align-items: center;
 }
 
-nav.navbar > p {
-  margin-right: 40%;
-}
-
 nav.navbar > a {
   color: #ffffff;
   text-decoration: none;
@@ -27,6 +23,24 @@ nav.navbar > a {
 nav.navbar > a:hover {
   text-decoration: underline;
   text-decoration-thickness: 3px;
+}
+
+.main-link {
+  margin-right: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+a.main-link :hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #ffea00;
+}
+
+.Reviewr {
+  margin-left: 10px;
 }
 
 .user-score,

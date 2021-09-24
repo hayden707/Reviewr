@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
-import musicnote from '../images/musicnote.png'
+import MusicNote from './MusicNote'
 
 export default function Nav(props) {
   const profileLink = () => {
@@ -15,12 +15,10 @@ export default function Nav(props) {
     <div className="Nav">
       {props.authenticated && props.user ? (
         <nav className="navbar">
-          <p>
-            <NavLink className="navlink" to="/">
-              <img src={musicnote} id="app-logo" alt="music-note" />
-            </NavLink>
-            Reviewr
-          </p>
+          <NavLink className="navlink main-link" to="/">
+            <MusicNote />
+            <h2 className="Reviewr">Reviewr</h2>
+          </NavLink>
           <NavLink className="navlink" to="/">
             Home
           </NavLink>
@@ -40,7 +38,7 @@ export default function Nav(props) {
         <nav className="navbar">
           <p>
             <NavLink className="navlink" to="/">
-              <img src={musicnote} id="app-logo" alt="music-note" />
+              <MusicNote />
             </NavLink>
             Reviewr
           </p>
