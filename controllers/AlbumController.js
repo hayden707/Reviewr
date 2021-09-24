@@ -5,7 +5,7 @@ const GetAllAlbums = async (req, res) => {
     const album = await Album.findAll()
     res.send(album)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -16,7 +16,7 @@ const FindAlbum = async (req, res) => {
     })
     res.send(res)
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 
@@ -66,7 +66,7 @@ const DeleteAlbum = async (req, res) => {
       status: 'Ok'
     })
   } catch (error) {
-    throw error
+    res.status(500).send({ error: error })
   }
 }
 

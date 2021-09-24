@@ -2,11 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.signup-image {
-  max-height: 700px;
+.image-container {
   grid-column-start: 1;
   grid-column-end: 2;
+  display: flex;
 }
+.signup-image {
+  height: 100vh;
+}
+
 h2 {
   color: #ffea00;
 }
@@ -15,6 +19,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 input {

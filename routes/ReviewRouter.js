@@ -15,6 +15,12 @@ router.get(
   controller.GetReviewById
 )
 router.get(
+  '/deezer/:deezer_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetReviewByDeezerId
+)
+router.get(
   '/average/:album_id',
   middleware.stripToken,
   middleware.verifyToken,

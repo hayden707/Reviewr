@@ -60,6 +60,7 @@ const ReviewSlider = (props) => {
           height: '20px',
           transform: 'translateY(6px)'
         }}
+        value={props.rating}
         onChange={(e) => props.setRating(e)}
       />
     </div>
