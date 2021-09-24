@@ -22,7 +22,11 @@ export default function Login(props) {
   return (
     <div className="login-grid">
       <div className="login-image-container">
-        <img className="signup-image" src="https://i.imgur.com/XFthwBW.jpg" />
+        <img
+          className="signup-image"
+          src="https://i.imgur.com/XFthwBW.jpg"
+          alt="signup"
+        />
       </div>
       <div className="login-form-container">
         <h2>Log in. Rock Out.</h2>
