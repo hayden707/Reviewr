@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Loading from '../components/Loading'
 import { GetDeezerAlbumDetails } from '../services/DeezerServices'
 import {
   GetAlbumAverageRating,
@@ -74,7 +75,7 @@ const AlbumReviews = (props) => {
           </div>
         </div>
       ) : (
-        <h1>Loading...</h1>
+        <Loading />
       )}
     </div>
   )
