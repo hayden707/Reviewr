@@ -9,6 +9,7 @@
   grid-template-rows: 1fr 200px;
   grid-template-columns: 1fr 2fr;
   padding-right: 120px;
+  text-align: right;
 }
 .album-image-container {
   grid-column-start: 1;
@@ -41,10 +42,12 @@
 
 #album-title {
   font-size: 24px;
+  text-align: right;
 }
 
 #artist-name {
-  font-size: 14px;
+  font-size: 20px;
+  text-align: right;
 }
 
 .score {
@@ -60,4 +63,8 @@
   margin-top: 60px;
   margin-bottom: 10px;
   align-self: flex-end;
+}
+
+#buttons {
+  text-align: right;
 }

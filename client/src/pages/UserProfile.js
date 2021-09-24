@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 import { Link } from 'react-router-dom'
@@ -36,7 +35,6 @@ export default function UserProfile(props) {
     <div>
       {userReviews &&
         userReviews.map((review) => (
-
           <div className="card" key={review.id}>
             <div>
               <div className="grid-layout">
@@ -51,7 +49,6 @@ export default function UserProfile(props) {
                       className="album-cover GrowOnHover"
                       alt="review"
                     />
-
                   </Link>
                 </div>
                 <div className="user-header-container">
@@ -65,7 +62,7 @@ export default function UserProfile(props) {
                     {review.content.substring(0, 255)}
                   </p>
                 </div>
-                <div className="edit-buttons">
+                <div className="edit-buttons" id="buttons">
                   {sameUserReviews && (
                     <div>
                       <Link to={`/editreview/${review.id}`}>

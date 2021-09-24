@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { FindDeezerAlbum } from '../services/DeezerServices'
-import { AddAlbum } from '../services/AlbumServices'
 import MediaCard from '../components/MediaCard'
-import AddReview from './AddReview'
-import { NavLink } from 'react-router-dom'
 import './Search.css'
 
 export default function Search() {

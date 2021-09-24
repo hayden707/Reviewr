@@ -5,7 +5,11 @@ export default function About() {
   return (
     <div className="about-grid">
       <div className="img-container">
-        <img className="about-img" src="https://i.imgur.com/DZnD12p.jpg" />
+        <img
+          className="about-img"
+          src="https://i.imgur.com/DZnD12p.jpg"
+          alt="about"
+        />
       </div>
       <div className="text-container">
         <h3>About Reviewr</h3>
