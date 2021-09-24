@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 import { Link } from 'react-router-dom'
@@ -63,7 +62,7 @@ export default function UserProfile(props) {
                     {review.content.substring(0, 255)}
                   </p>
                 </div>
-                <div className="edit-buttons">
+                <div className="edit-buttons" id="buttons">
                   {sameUserReviews && (
                     <div>
                       <Link to={`/editreview/${review.id}`}>
