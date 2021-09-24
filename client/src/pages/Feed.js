@@ -18,7 +18,7 @@ export default function Feed() {
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div>
+          <div key={review.id}>
             <div className="card" key={review.id}>
               <div className="grid-layout">
                 <div className="title-info-container">
@@ -30,7 +30,7 @@ export default function Feed() {
                   </h3>
                 </div>
                 <div className="album-image-container">
-                  <Link to={`/albumreviews/${review.album.id}`}>
+                  <Link to={`/albumreviews/${review.album.deezer_id}`}>
                     <img
                       src={review.album.image}
                       id="feed-album-image"

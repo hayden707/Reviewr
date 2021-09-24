@@ -65,7 +65,7 @@ div.reviewer-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 div.reviewer-info > *,
@@ -77,4 +77,5 @@ div.review-content {
   background-color: #180c6a;
   min-height: 200px;
   margin-bottom: 70px;
+  max-width: 100%;
 }
