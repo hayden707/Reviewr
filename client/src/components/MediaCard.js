@@ -5,7 +5,7 @@ import './MediaCard.css'
 export default function MediaCard(props) {
   return (
     <div className="media-card">
-      <NavLink to={`/addreview/${props.id}`}>
+      <NavLink to={`/albumreviews/${props.id}`}>
         <div key={props.id} className="card">
           <h3>{props.title}</h3>
           <p>{props.artist.name}</p>

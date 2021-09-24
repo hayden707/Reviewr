@@ -30,7 +30,7 @@ export default function Feed() {
                   </h3>
                 </div>
                 <div className="album-image-container">
-                  <Link to={`/albumreviews/${review.album.id}`}>
+                  <Link to={`/albumreviews/${review.album.deezer_id}`}>
                     <img
                       src={review.album.image}
                       id="feed-album-image"
