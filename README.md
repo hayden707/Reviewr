@@ -46,7 +46,7 @@ Overall, Reviewr is about community, hot-takes, and discovering new music.
 
 - [ ] Add timestamps to reviews.
 
-- [ ] Add an upvoting feature for revies.
+- [ ] Add an upvoting feature for reviews.
 
 ### **_Credits_**
 
