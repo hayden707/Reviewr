@@ -55,3 +55,7 @@ a.main-link :hover {
 .avg-score {
   font-size: 52px;
 }
+
+#logout-button {
+  all: unset;
+}
