@@ -1,13 +1,14 @@
-.review-box {
-  max-width: 400px;
-  margin-right: 80px;
-  margin-left: 80px;
+div.UserProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-layout {
   display: grid;
   grid-template-rows: 1fr 200px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 250px 600px;
   padding-right: 120px;
   text-align: right;
 }
@@ -35,9 +36,11 @@
   height: 200px;
   justify-items: center;
   margin-left: 30px;
+  max-width: 550px;
 }
 
 .review-box {
+  max-width: 500px;
   font-size: 18px;
   overflow: hidden;
   margin: 15px;
@@ -67,11 +70,18 @@ p.profile-score {
   margin-top: 60px;
 }
 
+.rating-user-bar {
+  max-width: 550px;
+}
+
 .rating-user-bar > * {
-  margin-left: 30px;
   margin-top: 60px;
   margin-bottom: 10px;
   align-self: flex-end;
+}
+
+.rating-user-bar:first-child {
+  margin-left: 30px;
 }
 
 button.edit-button,
