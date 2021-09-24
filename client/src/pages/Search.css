@@ -1,1 +1,13 @@
+.album-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
+.search-input {
+  background-color: #180c6a;
+  height: 40px;
+  border-bottom: none;
+  margin-right: 10px;
+  width: 300px;
+  font-size: 20px;
+}
