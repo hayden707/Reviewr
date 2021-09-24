@@ -2,11 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.signup-image {
-  max-height: 700px;
+.image-container {
   grid-column-start: 1;
   grid-column-end: 2;
+  display: flex;
 }
+.signup-image {
+  width: 100%;
+  height: auto;
+}
+
 h2 {
   color: #ffea00;
 }
