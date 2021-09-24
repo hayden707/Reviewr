@@ -36,7 +36,6 @@ export default function UserProfile(props) {
     <div>
       {userReviews &&
         userReviews.map((review) => (
-
           <div className="card" key={review.id}>
             <div>
               <div className="grid-layout">
@@ -51,7 +50,6 @@ export default function UserProfile(props) {
                       className="album-cover GrowOnHover"
                       alt="review"
                     />
-
                   </Link>
                 </div>
                 <div className="user-header-container">
