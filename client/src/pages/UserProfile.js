@@ -40,33 +40,49 @@ export default function UserProfile(props) {
           <div>
             <div className="card" key={review.id}>
               <div>
-                <h3>{review.album.title}</h3>
-                <h3>{review.album.artist}</h3>
-                <Link to={`/albumreviews/${review.album_id}`}>
-                  <img
-                    src={review.album.image}
-                    class="album-cover"
-                    alt="review"
-                  />
-                </Link>
-                <h3>by {review.user.username}</h3>
-              </div>
-              <p>{review.rating}</p>
-              <p className="review-box">{review.content.substring(0, 255)}</p>
-              {sameUserReviews && (
-                <div>
-                  <Link to={`/editreview/${review.id}`}>
-                    <button>Edit review</button>
-                  </Link>
-                  <button
-                    onClick={() => {
-                      deleteReview(review.id)
-                    }}
-                  >
-                    Delete review
-                  </button>
+                <div className="grid-layout">
+                  <div className="title-info-container">
+                    <h3 id="album-title">{review.album.title}</h3>
+                    <h3 id="artist-name">{review.album.artist}</h3>
+                  </div>
+                  <div className="album-image-container">
+                    <Link to={`/albumreviews/${review.album_id}`}>
+                      <img
+                        src={review.album.image}
+                        class="album-cover"
+                        alt="review"
+                      />
+                    </Link>
+                  </div>
+                  <div className="user-header-container">
+                    <div className="rating-user-bar">
+                      <p className="score">{review.rating}</p>
+                      <h3 className="username">by {review.user.username}</h3>
+                    </div>
+                  </div>
+                  <div className="review-text-container">
+                    <p className="review-box">
+                      {review.content.substring(0, 255)}
+                    </p>
+                  </div>
+                  <div className="edit-buttons">
+                    {sameUserReviews && (
+                      <div>
+                        <Link to={`/editreview/${review.id}`}>
+                          <button>Edit review</button>
+                        </Link>
+                        <button
+                          onClick={() => {
+                            deleteReview(review.id)
+                          }}
+                        >
+                          Delete review
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         ))}
