@@ -1,4 +1,24 @@
-#search-images {
+.search-images {
   height: 200px;
-  text-align: right;
+  text-align: center;
+}
+
+div.media-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+div.media-card > a {
+  text-decoration: none;
+}
+
+div.card > * {
+  margin: 0;
+  align-self: end;
+}
+
+div.card:first-child {
+  margin-top: 50px;
 }
