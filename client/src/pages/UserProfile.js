@@ -44,7 +44,7 @@ export default function UserProfile(props) {
                   <h3 id="artist-name">{review.album.artist}</h3>
                 </div>
                 <div className="album-image-container">
-                  <Link to={`/albumreviews/${review.album_id}`}>
+                  <Link to={`/albumreviews/${review.album.deezer_id}`}>
                     <img
                       src={review.album.image}
                       className="album-cover GrowOnHover"
