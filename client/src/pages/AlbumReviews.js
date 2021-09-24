@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import DeezerWidget from '../components/DeezerWidget'
 import Loading from '../components/Loading'
 import { GetDeezerAlbumDetails } from '../services/DeezerServices'
 import {
@@ -37,15 +38,7 @@ const AlbumReviews = (props) => {
           <div className="album-info-container">
             <h6>AVERAGE SCORE</h6>
             <h1 className="avg-score">{averageScore}/10</h1>
-            <iframe
-              title="deezer-widget"
-              src={`https://widget.deezer.com/widget/dark/album/${albumDetails.id}?tracklist=false`}
-              width="400"
-              height="400"
-              frameBorder="0"
-              allowtransparency="true"
-              allow="encrypted-media; clipboard-write"
-            ></iframe>
+            <DeezerWidget albumId={albumDetails.id} />
             <Link to={`/addreview/${props.match.params.album_id}`}>
               <button>Review this Album</button>
             </Link>
