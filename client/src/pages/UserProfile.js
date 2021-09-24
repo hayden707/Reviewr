@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 import { Link } from 'react-router-dom'
 import './UserProfile.css'
+import EditIcon from '../components/EditIcon'
+import DeleteIcon from '../components/DeleteIcon'
 
 export default function UserProfile(props) {
   const [userReviews, setUserReviews] = useState([])
@@ -62,18 +64,22 @@ export default function UserProfile(props) {
                     {review.content.substring(0, 255)}
                   </p>
                 </div>
-                <div className="edit-buttons" id="buttons">
+                <div className="post-buttons">
                   {sameUserReviews && (
-                    <div>
+                    <div className="post-buttons-container">
                       <Link to={`/editreview/${review.id}`}>
-                        <button>Edit review</button>
+                        <button className="edit-button">
+                          <EditIcon />
+                          Edit
+                        </button>
                       </Link>
                       <button
+                        className="delete-button"
                         onClick={() => {
                           deleteReview(review.id)
                         }}
                       >
-                        Delete review
+                        <DeleteIcon /> Delete
                       </button>
                     </div>
                   )}
