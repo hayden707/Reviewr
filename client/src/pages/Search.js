@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import { FindDeezerAlbum } from '../services/DeezerServices'
 import MediaCard from '../components/MediaCard'
 import './Search.css'
+import SearchIcon from '../components/SearchIcon'
 
 export default function Search() {
   const [albums, setAlbums] = useState(null)
   const [input, setInput] = useState(null)
+  const [searched, toggleSearched] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await FindDeezerAlbum(input)
     setAlbums(res.data)
+    toggleSearched(true)
   }
 
   return (
@@ -25,7 +28,10 @@ export default function Search() {
           onChange={(e) => setInput(e.target.value)}
           required
         />
-        <button className="search-button">Search</button>
+        <button className="search-button">
+          <SearchIcon />
+          Search
+        </button>
       </form>
       <div className="album-card">
         {albums &&

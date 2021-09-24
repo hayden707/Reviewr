@@ -70,11 +70,12 @@ a {
 }
 
 .review-text-container {
-  display: inline-grid;
+  display: flex;
   background-color: #180c6a;
   height: 200px;
-  justify-items: center;
+  justify-content: flex-start;
   margin-left: 30px;
+  padding-left: 20px;
 }
 
 .review-header-container {
@@ -88,14 +89,16 @@ a {
   margin-top: 60px;
 }
 
-.review-content {
+.feed-review-content {
   overflow: hidden;
   max-width: 300px;
   text-overflow: elipsis;
   text-align: center;
   justify-items: center;
+  font-size: 18px;
 }
 
 p.score {
   text-shadow: 0px 0px 5px #ffea00;
+  margin-left: 10px;
 }

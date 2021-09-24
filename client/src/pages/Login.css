@@ -6,6 +6,9 @@
 .login-image-container {
   grid-column-start: 1;
   grid-column-end: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .signup-image {

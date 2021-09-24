@@ -29,12 +29,14 @@
   margin: 0;
 }
 
-.review-text-container {
+.profile-review-text-container {
   display: inline-grid;
   background-color: #180c6a;
   height: 200px;
   justify-items: center;
+  margin-left: 30px;
 }
+
 .review-box {
   font-size: 18px;
   overflow: hidden;
@@ -54,11 +56,13 @@
   text-align: right;
 }
 
-.score {
+p.profile-score {
   color: #ffea00;
   font-size: 36px;
   font-weight: bold;
+  text-shadow: 0px 0px 5px #ffea00;
 }
+
 .username {
   margin-top: 60px;
 }
@@ -77,6 +81,7 @@ button.delete-button {
   justify-content: space-evenly;
   align-items: center;
   max-width: 80px;
+  cursor: pointer;
 }
 
 button.delete-button {
