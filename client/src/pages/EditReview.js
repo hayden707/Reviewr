@@ -6,6 +6,7 @@ import { GetReviewById } from '../services/ReviewsServices'
 import { EditUserReview } from '../services/ReviewsServices'
 import './EditReview.css'
 
+
 export default function EditReview(props) {
   const [updatedReview, setUpdatedReview] = useState(null)
   const [rating, setRating] = useState(5.0)
@@ -35,6 +36,7 @@ export default function EditReview(props) {
   }
 
   return (
+
     <div className="EditReview">
       <h2 className="write-review">Edit Your Review</h2>
       {updatedReview ? (
@@ -73,6 +75,7 @@ export default function EditReview(props) {
               </div>
             </form>
           </div>
+
         </div>
       ) : (
         <Loading />
