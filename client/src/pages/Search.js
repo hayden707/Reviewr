@@ -21,6 +21,7 @@ export default function Search() {
           className="search-input"
           type="text"
           name="search"
+          placeholder="Enter Album"
           onChange={(e) => setInput(e.target.value)}
           required
         />
