@@ -32,7 +32,9 @@ export default function Nav(props) {
           <NavLink className="navlink" to={profileLink}>
             {props.user.username}'s Profile
           </NavLink>
-          <button onClick={props.handleLogOut}>Logout</button>
+          <button id="logout-button" onClick={props.handleLogOut}>
+            Logout
+          </button>
         </nav>
       ) : (
         <nav className="navbar">
