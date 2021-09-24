@@ -1,5 +1,56 @@
 .review-box {
-  /* max-width: 400px; */
+  max-width: 400px;
   margin-right: 80px;
   margin-left: 80px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-rows: 1fr 200px;
+  grid-template-columns: 1fr 2fr;
+  padding-right: 120px;
+}
+.album-image-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.title-info-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.review-text-container {
+  display: inline-grid;
+  background-color: #180c6a;
+  height: 200px;
+  justify-items: center;
+}
+.review-box {
+  overflow: hidden;
+  max-width: 300px;
+  text-overflow: elipsis;
+  text-align: center;
+  justify-items: center;
+}
+
+#album-title {
+  font-size: 24px;
+}
+
+#artist-name {
+  font-size: 14px;
+}
+
+.score {
+  color: #ffea00;
+  font-size: 36px;
+  font-weight: bold;
+}
+.username {
+  margin-top: 60px;
 }
