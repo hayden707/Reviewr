@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { DeleteReview, GetUserReviews } from '../services/ReviewsServices'
 import { Link } from 'react-router-dom'
+import './UserProfile.css'
 
 export default function UserProfile(props) {
   const [userReviews, setUserReviews] = useState([])
@@ -51,7 +52,9 @@ export default function UserProfile(props) {
                 <h3>by {review.user.username}</h3>
               </div>
               <p>{review.rating}</p>
-              <p>{review.content.substring(0, 255)}</p>
+              <p className="review-text-container">
+                {review.content.substring(0, 255)}
+              </p>
               {sameUserReviews && (
                 <div>
                   <Link to={`/editreview/${review.id}`}>

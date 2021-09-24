@@ -41,8 +41,8 @@ export default function Nav(props) {
           <p>
             <NavLink className="navlink" to="/">
               <img src={musicnote} id="app-logo" alt="music-note" />
+              Reviewr
             </NavLink>
-            Reviewr
           </p>
           <NavLink className="navlink" to="/">
             Home

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { GetReviewById } from '../services/ReviewsServices'
 import { useEffect } from 'react'
 import { EditUserReview } from '../services/ReviewsServices'
+import ReviewSlider from '../components/ReviewSlider'
 
 export default function EditReview(props) {
   const [updatedReview, setUpdatedReview] = useState(null)
@@ -42,20 +43,14 @@ export default function EditReview(props) {
             alt={updatedReview.album.title}
           />
           <form onSubmit={handleSubmit}>
-            <input
-              type="number"
-              name="updated-rating"
-              value={rating}
-              contentEditable="true"
-              onChange={(e) => setRating(e.target.value)}
-            ></input>
-            <input
-              type="text"
-              name="updated-content"
+            <ReviewSlider setRating={setRating} />
+            <textarea
+              name="review-content"
               maxLength="255"
-              value={content}
+              rows="10"
+              placeholder="How's this album?"
               onChange={(e) => setContent(e.target.value)}
-            ></input>
+            ></textarea>
             <button>Update review</button>
           </form>
         </div>
