@@ -44,7 +44,10 @@ export default function Feed() {
                     <p className="score">
                       {parseFloat(review.rating).toFixed(1)}/10
                     </p>
-                    <Link to={`/userprofile/${review.user.id}`}>
+                    <Link
+                      className="username"
+                      to={`/userprofile/${review.user.id}`}
+                    >
                       <h3>by {review.user.username}</h3>
                     </Link>
                   </div>

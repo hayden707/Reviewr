@@ -5,8 +5,9 @@ import './Landing.css'
 export default function Landing() {
   return (
     <div className="landing-grid">
-      <img className="landing-image" src="https://i.imgur.com/XFthwBW.jpg" />
-
+      <div className="landing-image-container">
+        <img className="landing-image" src="https://i.imgur.com/XFthwBW.jpg" />
+      </div>
       <div className="landing-text-container">
         <div className="landing-text-flex">
           <h3>Review music your way.</h3>
