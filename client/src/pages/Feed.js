@@ -16,13 +16,13 @@ export default function Feed() {
   }, [])
 
   return (
-    <div>
+    <div className="FeedComponent">
       {reviews ? (
-        <div>
+        <div className="feed-container">
           {reviews.map((review) => (
             <div key={review.id}>
-              <div className="card" key={review.id}>
-                <div className="grid-layout">
+              <div className="feed-card" key={review.id}>
+                <div className="feed-grid-layout">
                   <div className="title-info-container">
                     <Link to={`/albumreviews/${review.album.deezer_id}`}>
                       <h3 className="left album-title">{review.album.title}</h3>
