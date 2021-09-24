@@ -18,29 +18,35 @@
 
 ---
 
-### **_Getting Started_**
+### **_About Reviewr_**
 
-Prior to beginning our project, our group has created a Trello board (linked above) to outline the creation of our app. We will begin by setting up our API and testing the various endpoints we plan to use. We will then initiate our database, build our three table models, controllers, and CRUD queries.
+Reviewr is a music social networking site built around user generated reviews written by normal people, for normal people. It's a one site stop to listen, rate, and write about the albums you love (and critique the ones you don't).
 
-We will build our front-end using React. We have 13 components as outlined in a component hierarchy diagram.
+After creating an account, users can see a feed of all the reviews that have been recently posted. They can search for any exiting album, rate it on a scale from one to ten, and add their thoughts in under 255 characters. If a reviewer changes their mind, they can update their entry. If you like another review, you can click on that person's username and read everything they've contributed to the site.
 
-We will also implement an authorization system so that only registered users will be able to interact with the site.
+Overall, Reviewr is about community, hot-takes, and discovering new music.
 
 ---
 
 ### **_Screenshots_**
 
-![image](https://i.ibb.co/7W641DL/Screen-Shot-2021-09-23-at-4-25-14-PM.png)
+![image](https://i.imgur.com/X6R85gz.png)
 
-![image](https://user-images.githubusercontent.com/38524171/133909865-8a181d3c-64ef-4c66-b193-d709f0428b63.png)
+![image](https://i.imgur.com/YftcyFF.png)
 
-![image](https://user-images.githubusercontent.com/38524171/133909872-2756b82d-0805-4e37-acd0-ebbb1731c807.png)
+![image](https://i.imgur.com/9KUbrEE.png)
+
+![image](https://i.imgur.com/wUaYutu.png)
 
 ### **_Future Updates_**
 
 - [ ] Add user find functionality
 
 - [ ] Add TMDB API to review movies
+
+- [ ] Add timestamps to reviews.
+
+- [ ] Add an upvoting feature for revies.
 
 ### **_Credits_**
 
