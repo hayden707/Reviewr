@@ -53,8 +53,8 @@ export default function Feed() {
                       </Link>
                     </div>
                   </div>
-                  <div className="review-text-container LightUpOnHover">
-                    <p className="review-content">
+                  <div className="review-text-container">
+                    <p className="feed-review-content">
                       {review.content.substring(0, 500)}{' '}
                     </p>
                   </div>

@@ -4,9 +4,9 @@ import './MediaCard.css'
 
 export default function MediaCard(props) {
   return (
-    <div className="media-card">
+    <div className="search-media-card">
       <NavLink to={`/albumreviews/${props.id}`}>
-        <div key={props.id} className="card">
+        <div key={props.id} className="search-card">
           <h3 className="seacrh-album-title">{props.title}</h3>
           <p className="artist-name">{props.artist.name}</p>
           <img

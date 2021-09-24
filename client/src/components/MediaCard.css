@@ -3,22 +3,24 @@
   text-align: center;
 }
 
-div.media-card {
+div.search-media-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
 }
 
-div.media-card > a {
+div.search-media-card > a {
   text-decoration: none;
 }
 
-div.card > * {
+div.search-card > * {
   margin: 0;
   align-self: end;
+  text-align: left;
+  max-width: 200px;
 }
 
-div.card:first-child {
-  margin-top: 50px;
+div.search-card:first-child {
+  margin-top: 70px;
 }

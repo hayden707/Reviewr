@@ -55,13 +55,13 @@ export default function UserProfile(props) {
                 </div>
                 <div className="user-header-container">
                   <div className="rating-user-bar">
-                    <p className="score">
+                    <p className="profile-score">
                       {parseFloat(review.rating).toFixed(1)}/10
                     </p>
                     <h3 className="username">by {review.user.username}</h3>
                   </div>
                 </div>
-                <div className="review-text-container">
+                <div className="profile-review-text-container">
                   <p className="review-box">
                     {review.content.substring(0, 255)}
                   </p>
