@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReviewSlider from '../components/ReviewSlider'
 import { AddUserReview } from '../services/ReviewsServices'
 import { AddAlbum, FindAlbumByDeezerId } from '../services/AlbumServices'
-import { GetAlbumDetails } from '../services/DeezerServices'
+import { GetDeezerAlbumDetails } from '../services/DeezerServices'
 import './AddReview.css'
 
 export default function AddReview(props) {
@@ -12,7 +12,7 @@ export default function AddReview(props) {
 
   useEffect(async () => {
     // External API request for album details
-    const res = await GetAlbumDetails(props.match.params.album_id)
+    const res = await GetDeezerAlbumDetails(props.match.params.album_id)
     // Local API request, check if album exists in database
     const existing = await FindAlbumByDeezerId(res.data.id)
     // If albums exists in local API

@@ -20,7 +20,7 @@ Client.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-export const FindAlbum = async (data) => {
+export const FindDeezerAlbum = async (data) => {
   try {
     const res = await Client.get(`/search/album?q="${data}"`)
     return res.data
@@ -29,7 +29,7 @@ export const FindAlbum = async (data) => {
   }
 }
 
-export const GetAlbumDetails = async (data) => {
+export const GetDeezerAlbumDetails = async (data) => {
   try {
     const res = await Client.get(`/album/${data}`)
     return res
@@ -38,7 +38,7 @@ export const GetAlbumDetails = async (data) => {
   }
 }
 
-export const FindArtist = async (data) => {
+export const FindDeezerArtist = async (data) => {
   try {
     const res = await Client.get(`/search/artist?q="${data}"`)
     return res.data

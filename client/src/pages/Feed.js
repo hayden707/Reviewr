@@ -18,7 +18,7 @@ export default function Feed() {
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div>
+          <div key={review.id}>
             <div className="card" key={review.id}>
               <div className="grid-layout">
                 <div className="title-info-container">

@@ -63,6 +63,31 @@ const GetReviewById = async (req, res) => {
   }
 }
 
+const GetReviewByDeezerId = async (req, res) => {
+  try {
+    const id = req.params.deezer_id
+    const review = await Review.findAll({
+      include: [
+        {
+          model: Album,
+          as: 'album',
+          where: { deezer_id: id }
+        },
+        {
+          model: User,
+          as: 'user',
+          attributes: {
+            exclude: ['password_digest']
+          }
+        }
+      ]
+    })
+    res.send(review)
+  } catch (error) {
+    res.status(400).send({ error: error })
+  }
+}
+
 const GetAllReviewsOneAlbum = async (req, res) => {
   try {
     const id = req.params.album_id
@@ -160,6 +185,7 @@ const DeleteReview = async (req, res) => {
 module.exports = {
   GetReviews,
   GetReviewById,
+  GetReviewByDeezerId,
   GetAverageReviews,
   GetAllReviewsOneAlbum,
   GetAllReviewsOneUser,

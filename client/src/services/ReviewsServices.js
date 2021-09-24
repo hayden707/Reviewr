@@ -36,6 +36,15 @@ export const GetAlbumReviews = async (id) => {
   }
 }
 
+export const GetAlbumReviewsByDeezerId = async (id) => {
+  try {
+    const res = await Client.get(`/reviews/deezer/${id}`)
+    return res
+  } catch (error) {
+    throw error
+  }
+}
+
 export const GetUserReviews = async (id) => {
   try {
     const res = await Client.get(`/reviews/user/${id}`)

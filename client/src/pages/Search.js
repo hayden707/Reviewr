@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FindAlbum } from '../services/DeezerServices'
+import { FindDeezerAlbum } from '../services/DeezerServices'
 import { AddAlbum } from '../services/AlbumServices'
 import MediaCard from '../components/MediaCard'
 import AddReview from './AddReview'
@@ -12,7 +12,7 @@ export default function Search() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await FindAlbum(input)
+    const res = await FindDeezerAlbum(input)
     setAlbums(res.data)
   }
 
