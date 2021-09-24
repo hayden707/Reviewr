@@ -16,10 +16,10 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/auth', AuthRouter)
-app.use('/reviews', ReviewRouter)
-app.use('/users', UserRouter)
-app.use('/albums', AlbumRouter)
+app.use('/api/auth', AuthRouter)
+app.use('/api/reviews', ReviewRouter)
+app.use('/api/users', UserRouter)
+app.use('/api/albums', AlbumRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')))
