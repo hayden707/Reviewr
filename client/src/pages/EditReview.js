@@ -40,8 +40,6 @@ export default function EditReview(props) {
       {updatedReview ? (
         <div className="edit-review-container">
           <div className="album-details-container">
-            <h3>{updatedReview.album.artist}</h3>
-            <h3>{updatedReview.album.title}</h3>
             <DeezerWidget albumId={updatedReview.album.deezer_id} />
           </div>
           <div className="album-review-form-container">
