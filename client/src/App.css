@@ -5,11 +5,14 @@
 button {
   width: 110px;
   height: 40px;
+  font-family: 'Jost', sans-serif;
   border: 2px solid #ffea00;
   box-sizing: border-box;
-  background-color: black;
+  background-color: #12111d;
   color: #ffea00;
+  font-weight: bold;
 }
+
 .album-cover {
   height: 200px;
   width: 200px;

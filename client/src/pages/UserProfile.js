@@ -11,7 +11,6 @@ export default function UserProfile(props) {
   const handleUserReviews = async () => {
     const data = await GetUserReviews(props.match.params.user_id)
     setUserReviews(data.reverse())
-    console.log(data)
   }
 
   const deleteReview = async (id) => {
