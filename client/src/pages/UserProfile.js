@@ -41,8 +41,8 @@ export default function UserProfile(props) {
             <div>
               <div className="grid-layout">
                 <div className="title-info-container">
-                  <h3 id="album-title">{review.album.title}</h3>
-                  <h3 id="artist-name">{review.album.artist}</h3>
+                  <h3 className="album-title">{review.album.title}</h3>
+                  <h3 className="artist-name">{review.album.artist}</h3>
                 </div>
                 <div className="album-image-container">
                   <Link to={`/albumreviews/${review.album.deezer_id}`}>
@@ -55,7 +55,9 @@ export default function UserProfile(props) {
                 </div>
                 <div className="user-header-container">
                   <div className="rating-user-bar">
-                    <p className="score">{review.rating}/10</p>
+                    <p className="score">
+                      {parseFloat(review.rating).toFixed(1)}/10
+                    </p>
                     <h3 className="username">by {review.user.username}</h3>
                   </div>
                 </div>
