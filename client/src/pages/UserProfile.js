@@ -34,7 +34,8 @@ export default function UserProfile(props) {
     checkIfSameUser()
   }, [])
   return (
-    <div>
+    <div className="UserProfile">
+      <h1>Your Reviews</h1>
       {userReviews &&
         userReviews.map((review) => (
           <div className="card" key={review.id}>
