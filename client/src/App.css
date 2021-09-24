@@ -24,6 +24,25 @@ button {
   animation: LazyLoad 0.8s ease infinite;
 }
 
+.GrowOnHover {
+  transform: scale(1);
+  transition: 0.3s ease;
+}
+
+.GrowOnHover:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 15px #0000008f;
+}
+
+.EasyGrowOnHover {
+  transition: 0.3s ease;
+}
+
+.EasyGrowOnHover:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 15px #0000008f;
+}
+
 @-webkit-keyframes LazyLoad {
   0% {
     background-position: 0% 97%;

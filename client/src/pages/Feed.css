@@ -47,6 +47,16 @@ a {
   grid-row-end: 2;
 }
 
+.title-info-container > h3 {
+  margin: 0;
+  margin-right: 25px;
+  text-align: right;
+}
+
+.title-info-container:first-child {
+  margin-top: 60px;
+}
+
 .album-image-container {
   grid-column-start: 1;
   grid-column-end: 2;

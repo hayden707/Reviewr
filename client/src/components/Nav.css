@@ -58,4 +58,11 @@ a.main-link :hover {
 
 #logout-button {
   all: unset;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #ffffff;
 }

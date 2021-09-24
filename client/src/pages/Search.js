@@ -30,7 +30,8 @@ export default function Search() {
         <button className="search-button">Search</button>
       </form>
       <div className="album-card">
-        {albums && albums.map((album) => <MediaCard {...album} />)}
+        {albums &&
+          albums.map((album) => <MediaCard {...album} key={album.id} />)}
       </div>
     </div>
   )

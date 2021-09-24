@@ -34,7 +34,7 @@ export default function Feed() {
                     <img
                       src={review.album.image}
                       id="feed-album-image"
-                      className="left"
+                      className="left GrowOnHover"
                       alt="review"
                     />
                   </Link>
@@ -52,7 +52,7 @@ export default function Feed() {
                     </Link>
                   </div>
                 </div>
-                <div className="review-text-container">
+                <div className="review-text-container LightUpOnHover">
                   <p className="review-content">
                     {review.content.substring(0, 500)}{' '}
                   </p>
