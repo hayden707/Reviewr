@@ -29,7 +29,9 @@ export default function Search() {
         />
         <button className="search-button">Search</button>
       </form>
-      {albums && albums.map((album) => <MediaCard {...album} />)}
+      <div className="album-card">
+        {albums && albums.map((album) => <MediaCard {...album} />)}
+      </div>
     </div>
   )
 }
